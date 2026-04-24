@@ -1,0 +1,11 @@
+[17:16:47] Sweep start — results under /root/benchmarks/results/20260423-171647-mysql8.4
+[17:16:47] Sizes (GiB): 110
+[17:16:47] Setting all CPUs to performance governor
+[17:16:47] Active governors: performance
+[17:16:47] Pinning CPU idle to C1 max (disabling C1E / C6 / deeper)
+[17:16:48] Enabled idle states (cpu0): POLL,C1
+[17:16:48] Setting vm.swappiness = 1 (was 1)
+[17:16:48] Disabling Transparent Huge Pages (was enabled='always madvise [never]', defrag='always defer defer+madvise madvise [never]')
+[17:16:48] THP now: enabled='always madvise [never]' defrag='always defer defer+madvise madvise [never]'
+[17:16:48] ===== Iteration: buffer_pool=110GiB (/root/benchmarks/results/20260423-171647-mysql8.4/bp-110GiB) =====
+[17:16:48] Restoring /data/mysql-8.4 from /backup/mysql-8.4

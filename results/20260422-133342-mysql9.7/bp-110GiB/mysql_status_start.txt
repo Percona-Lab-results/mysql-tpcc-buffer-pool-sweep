@@ -1,0 +1,41 @@
+Variable_name	Value
+innodb_buffer_pool_chunk_size	134217728
+innodb_buffer_pool_dump_at_shutdown	OFF
+innodb_buffer_pool_dump_now	OFF
+innodb_buffer_pool_dump_pct	25
+innodb_buffer_pool_filename	ib_buffer_pool
+innodb_buffer_pool_in_core_file	OFF
+innodb_buffer_pool_instances	2
+innodb_buffer_pool_load_abort	OFF
+innodb_buffer_pool_load_at_startup	OFF
+innodb_buffer_pool_load_now	OFF
+innodb_buffer_pool_size	118111600640
+Variable_name	Value
+Innodb_buffer_pool_dump_status	Dumping of buffer pool not started
+Innodb_buffer_pool_load_status	Loading of buffer pool not started
+Innodb_buffer_pool_resize_status	
+Innodb_buffer_pool_resize_status_code	0
+Innodb_buffer_pool_resize_status_progress	0
+Innodb_buffer_pool_pages_data	3000
+Innodb_buffer_pool_bytes_data	49152000
+Innodb_buffer_pool_pages_dirty	2212
+Innodb_buffer_pool_bytes_dirty	36241408
+Innodb_buffer_pool_pages_flushed	1583
+Innodb_buffer_pool_pages_free	7205317
+Innodb_buffer_pool_pages_misc	643
+Innodb_buffer_pool_pages_total	7208960
+Innodb_buffer_pool_read_ahead_rnd	0
+Innodb_buffer_pool_read_ahead	187
+Innodb_buffer_pool_read_ahead_evicted	0
+Innodb_buffer_pool_read_requests	1387713
+Innodb_buffer_pool_reads	2402
+Innodb_buffer_pool_wait_free	0
+Innodb_buffer_pool_write_requests	454200
+Variable_name	Value
+Com_commit	41
+Variable_name	Value
+Com_rollback	0
+Variable_name	Value
+Questions	19
+Variable_name	Value
+Uptime	17

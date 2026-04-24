@@ -1,0 +1,31 @@
+# Raw OS and HammerDB collectors — easily regenerated, huge
+results/**/turbostat.tsv
+results/**/turbostat.err
+results/**/iostat.log
+results/**/mpstat.log
+results/**/vmstat.log
+results/**/hammerdb.log
+results/**/hammerdbcli.out
+results/**/hdbtcount_*.log
+
+# HammerDB archive of stale counter logs
+/tmp/hdbtcount_archive/
+
+# Big RPM blobs for the locally-built 9.7 image — rebuild via download
+mysql-9.7-image/rpms/*.rpm
+mysql-9.7-image/entrypoint/gosu
+
+# SSL/TLS material copied from running containers
+mysql-certs/
+mysql-certs-9.7/
+
+# Ad-hoc smoke tests and temp files
+hammerdb_load_small.tcl
+
+# Editor / OS
+.DS_Store
+*.swp
+*~
+
+# Local Claude settings — may contain API tokens
+.claude/

@@ -1,0 +1,102 @@
+[mysqld]
+
+# ─── General ───────────────────────────────────────────────────────────────────
+user                            = mysql
+datadir                         = /var/lib/mysql
+socket                          = /var/run/mysqld/mysqld.sock
+pid-file                        = /var/run/mysqld/mysqld.pid
+bind-address                    = 0.0.0.0
+port                            = 3306
+skip-name-resolve               = ON
+mysqlx                          = OFF
+performance_schema              = OFF
+# MySQL 9.x removed the mysql_native_password plugin (the .so file on disk
+# is a non-loadable stub). Only caching_sha2_password is available, which
+# requires TLS. HammerDB connects with mysql_ssl=true — the sweep flips this
+# automatically when MYSQL_PROFILE=9.7.
+
+# ─── Connection & Threading ────────────────────────────────────────────────────
+max_connections                 = 2000
+max_connect_errors              = 1000000
+thread_stack                    = 512K
+thread_cache_size               = 256
+back_log                        = 4096
+wait_timeout                    = 28800
+interactive_timeout             = 28800
+connect_timeout                 = 10
+
+# ─── InnoDB – Buffer Pool (60–70 % of RAM → ~80 GB) ───────────────────────────
+innodb_buffer_pool_size         = 90G
+innodb_buffer_pool_instances    = 2
+innodb_buffer_pool_load_at_startup  = OFF
+innodb_buffer_pool_dump_at_shutdown = OFF
+# innodb_numa_interleave is not available in Oracle MySQL 8.4/9.7 builds;
+# apply NUMA interleaving at the container level (e.g. numactl --interleave=all).
+
+# ─── InnoDB – I/O (NVMe can saturate many threads) ────────────────────────────
+innodb_io_capacity              = 10000
+innodb_io_capacity_max          = 20000
+innodb_read_io_threads          = 16
+innodb_write_io_threads         = 16
+innodb_use_native_aio           = ON
+
+# ─── InnoDB – Redo Log / Durability ───────────────────────────────────────────
+innodb_redo_log_capacity        = 32G
+innodb_log_buffer_size          = 256M
+innodb_flush_log_at_trx_commit  = 1
+innodb_doublewrite              = ON
+
+# ─── InnoDB – Concurrency & OLTP Tuning ───────────────────────────────────────
+innodb_stats_on_metadata        = OFF
+innodb_open_files               = 65536
+innodb_lock_wait_timeout        = 50
+innodb_rollback_on_timeout      = ON
+
+#innodb_max_purge_lag = 100000
+#innodb_max_purge_lag_delay = 1000000
+#innodb_purge_threads            = 1
+#innodb_purge_batch_size         = 10
+
+# ─── InnoDB – Purge ───────────────────────────────────────────────────────────
+#innodb_purge_threads            = 8
+#innodb_purge_batch_size         = 300
+
+# ─── Per-Session Buffers (keep modest; many connections × this = RAM) ──────────
+sort_buffer_size                = 4M
+join_buffer_size                = 4M
+read_buffer_size                = 2M
+read_rnd_buffer_size            = 4M
+tmp_table_size                  = 256M
+max_heap_table_size             = 256M
+
+# ─── Table & File Handles ──────────────────────────────────────────────────────
+table_open_cache                = 65536
+table_definition_cache          = 65536
+open_files_limit                = 1000000
+
+# ─── Binary Log ────────────────────────────────────────────────────────────────
+log_bin                         = /var/lib/mysql/mysql-bin
+binlog_format                   = ROW
+binlog_row_image                = MINIMAL
+binlog_expire_logs_seconds      = 604800
+sync_binlog                     = 1
+binlog_cache_size               = 4M
+max_binlog_size                 = 512M
+
+
+# ─── Character Set ─────────────────────────────────────────────────────────────
+character_set_server            = utf8mb4
+collation_server                = utf8mb4_unicode_ci
+
+# ─── Misc ──────────────────────────────────────────────────────────────────────
+max_allowed_packet              = 64M
+bulk_insert_buffer_size         = 256M
+key_buffer_size                 = 64M
+
+[mysqldump]
+quick
+max_allowed_packet              = 64M
+
+[client]
+socket                          = /var/run/mysqld/mysqld.sock
+default-character-set           = utf8mb4

@@ -1,0 +1,18 @@
+[09:24:32] Sweep start — results under /root/benchmarks/results/20260422-092432-mysql9.7
+[09:24:32] Sizes (GiB): 110
+[09:24:32] Setting all CPUs to performance governor
+[09:24:32] Active governors: performance
+[09:24:32] Pinning CPU idle to C1 max (disabling C1E / C6 / deeper)
+[09:24:33] Enabled idle states (cpu0): POLL,C1
+[09:24:33] Setting vm.swappiness = 1 (was 1)
+[09:24:33] Disabling Transparent Huge Pages (was enabled='always madvise [never]', defrag='always defer defer+madvise madvise [never]')
+[09:24:33] THP now: enabled='always madvise [never]' defrag='always defer defer+madvise madvise [never]'
+[09:24:33] ===== Iteration: buffer_pool=110GiB (/root/benchmarks/results/20260422-092432-mysql9.7/bp-110GiB) =====
+[09:24:33] Restoring /data/mysql-9.7 from /backup/mysql-9.7
+[09:30:07] Dropping OS page cache
+[09:30:32] Starting MySQL container with innodb_buffer_pool_size = 110G;innodb_buffer_pool_instances = 2
+[09:30:33] Waiting for MySQL to accept connections
+mysqld is alive
+[09:30:50] MySQL ready
+mysql: [Warning] Using a password on the command line interface can be insecure.
+[09:30:50] MySQL is running and responsive
