@@ -5,8 +5,6 @@ results/**/iostat.log
 results/**/mpstat.log
 results/**/vmstat.log
 results/**/hammerdb.log
-results/**/hammerdbcli.out
-results/**/hdbtcount_*.log
 
 # HammerDB archive of stale counter logs
 /tmp/hdbtcount_archive/
