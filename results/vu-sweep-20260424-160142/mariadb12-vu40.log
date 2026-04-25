@@ -1,3 +1,21 @@
+[18:36:55] Sweep start — results under /root/benchmarks/results/20260424-183655-mariadb-12
+[18:36:55] Sizes (GiB): 110
+[18:36:55] Setting all CPUs to performance governor
+[18:36:55] Active governors: performance
+[18:36:55] Pinning CPU idle to C1 max (disabling C1E / C6 / deeper)
+[18:36:55] Enabled idle states (cpu0): POLL,C1
+[18:36:55] Setting vm.swappiness = 1 (was 1)
+[18:36:55] Disabling Transparent Huge Pages (was enabled='always madvise [never]', defrag='always defer defer+madvise madvise [never]')
+[18:36:55] THP now: enabled='always madvise [never]' defrag='always defer defer+madvise madvise [never]'
+[18:36:55] ===== Iteration: buffer_pool=110GiB (/root/benchmarks/results/20260424-183655-mariadb-12/bp-110GiB) =====
+[18:36:55] Restoring /data/mariadb-12 from /backup/mariadb-12
+[18:42:30] Dropping OS page cache
+[18:42:56] Starting MySQL container with innodb_buffer_pool_size = 110G
+[18:42:56] Waiting for MySQL to accept connections
+[18:43:03] MySQL ready
+[18:43:03] MySQL is running and responsive
+[18:43:03] turbostat sampling pid=2744529 (max 4320s)
+[18:43:03] Started OS/MySQL collectors (4 pids, max 4800s)
 [18:43:03] Running HammerDB (engine=maria rampup=10m duration=60m num_vu=40)
 HammerDB CLI v5.0
 Copyright © HammerDB Ltd hosted by tpc.org 2019-2025
@@ -8770,3 +8788,6 @@ Vuser 1 created MONITOR - WAIT IDLE
 ]
 
 RESULTS WRITTEN TO /root/benchmarks/results/20260424-183655-mariadb-12/bp-110GiB/hammerdb_run.out
+[19:53:11] Iteration 110GiB complete
+[19:53:11] Stopping container mariadb
+[19:54:32] Sweep done — results under /root/benchmarks/results/20260424-183655-mariadb-12
