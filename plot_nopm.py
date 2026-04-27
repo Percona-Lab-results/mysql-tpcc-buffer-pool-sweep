@@ -139,6 +139,38 @@ fig.tight_layout()
 fig.savefig(OUT / "seekdb_nopm_overlay.png", dpi=120, bbox_inches="tight")
 print(f"wrote {OUT / 'seekdb_nopm_overlay.png'}")
 
+# --- Figure 2b: raw 1-sec NOPM, one per size (no smoothing) ---
+fig, axes = plt.subplots(6, 1, figsize=(14, 14), sharex=True)
+for ax, size in zip(axes, SIZES):
+    t, r = load_seekdb_rate(SEEKDB_RUN, size)
+    if t is None:
+        ax.set_title(f"{size} GiB (no data)")
+        continue
+    mask = (t >= RAMPUP_SEC) & (t <= WINDOW_END)
+    ax.plot(t[mask] / 60.0, r[mask], color="tab:blue",
+            linewidth=0.5, alpha=0.9)
+    mean = r[mask].mean()
+    med = np.median(r[mask])
+    ax.axhline(mean, color="red", linestyle="--", linewidth=0.8, alpha=0.8,
+               label=f"mean {mean:,.0f}")
+    ax.axhline(med, color="darkgreen", linestyle=":", linewidth=0.8, alpha=0.8,
+               label=f"median {med:,.0f}")
+    ax.set_title(f"MEMORY_LIMIT = {size} GiB", fontsize=10, loc="left")
+    ax.set_ylabel("NOPM")
+    ax.grid(alpha=0.3)
+    ax.legend(loc="upper right", fontsize=8)
+    ax.set_ylim(0, 340_000)
+
+axes[-1].set_xlabel("elapsed (min)")
+fig.suptitle(
+    "SeekDB v1.2.0.0 — RAW 1-second NOPM (no smoothing)\n"
+    "HammerDB 4.12 TPC-C, 1000 warehouses, 80 VU, 60-min measurement window",
+    fontsize=11,
+)
+fig.tight_layout()
+fig.savefig(OUT / "seekdb_nopm_1sec_raw.png", dpi=110, bbox_inches="tight")
+print(f"wrote {OUT / 'seekdb_nopm_1sec_raw.png'}")
+
 # --- Figure 3: SeekDB vs MySQL 9.7 at three representative sizes ---
 fig, axes = plt.subplots(1, 3, figsize=(16, 5), sharey=True)
 for ax, size in zip(axes, [10, 50, 110]):
