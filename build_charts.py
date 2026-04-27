@@ -268,9 +268,10 @@ ENGINE_SHORT = {"maria122": "MDB 12.2", "maria123": "MDB 12.3",
 def _grouped_boxplot(group_keys, group_label_fmt, record_fn, title, outname):
     """
     Grouped boxplot: outer groups (BP size or VU count), inner engines.
-    Each group is normalized by the group's cross-engine median so boxes show
-    *relative* spread — otherwise high-throughput groups visually dominate and
-    jitter at low-throughput points is invisible.
+    Each engine's samples are normalized by that engine's own median in that
+    group, so every box is centered on 1.0 and the spread shows purely
+    intra-engine run-to-run variation. That way an engine that simply runs
+    consistently slower than the pack doesn't look like it has skew.
     Engines that have no data for a given group are simply skipped.
     """
     slot       = 1.0                    # width per engine slot
@@ -281,26 +282,18 @@ def _grouped_boxplot(group_keys, group_label_fmt, record_fn, title, outname):
     group_centers = []
     cursor = 0.0
     for key in group_keys:
-        # First pass: collect per-engine series for this group and compute the
-        # group-wide median (across all engines present) as the normalizer.
-        group_series = []
-        for eid in EIDS:
+        any_in_group = False
+        for i, eid in enumerate(EIDS):
             r = record_fn(key, eid)
             full = series_tpm(r)
             arr = full[full > 0]
-            group_series.append((eid, arr))
-        pooled = np.concatenate([a for _, a in group_series if a.size > 0]) \
-            if any(a.size > 0 for _, a in group_series) else np.array([])
-        if pooled.size == 0:
-            cursor += group_span + gap
-            continue
-        norm = float(np.median(pooled))
-        any_in_group = False
-        for i, (eid, arr) in enumerate(group_series):
             if arr.size == 0:
                 continue
+            med = float(np.median(arr))
+            if med <= 0:
+                continue
             positions.append(cursor + i * slot + slot / 2)
-            data.append(arr / norm)
+            data.append(arr / med)
             colors.append(ENGINES[eid]["color"])
             tick_labels.append(ENGINE_SHORT[eid].split()[-1])
             any_in_group = True
@@ -344,7 +337,7 @@ def _grouped_boxplot(group_keys, group_label_fmt, record_fn, title, outname):
                 bbox=dict(boxstyle="round,pad=0.25", fc="white",
                           ec="#cbd5e1", lw=0.8))
 
-    ax.set_ylabel("TPM / group median")
+    ax.set_ylabel("TPM / engine median")
     ax.set_title(title)
     ax.axhline(1.0, color="#94a3b8", lw=0.8, ls="--", zorder=1)
     ax.set_ylim(bottom=0)
@@ -365,7 +358,7 @@ def fig6_jitter_bp():
         group_keys=BP_SIZES,
         group_label_fmt="BP {}G",
         record_fn=lambda bp, eid: bp_record(eid, bp),
-        title="TPM Jitter — Buffer Pool Iterations  (80 VU · normalized to per-group median · boxes = P25–P75 · whiskers = P5–P95)",
+        title="TPM Jitter — Buffer Pool Iterations  (80 VU · each engine normalized to its own median · boxes = P25–P75 · whiskers = P5–P95)",
         outname="fig6_jitter_bp.png",
     )
 
@@ -375,7 +368,7 @@ def fig7_jitter_vu():
         group_keys=VU_STEPS,
         group_label_fmt="{} VU",
         record_fn=lambda vu, eid: vu_record(eid, vu),
-        title="TPM Jitter — Virtual Users Iterations  (BP 110G · normalized to per-group median · boxes = P25–P75 · whiskers = P5–P95)",
+        title="TPM Jitter — Virtual Users Iterations  (BP 110G · each engine normalized to its own median · boxes = P25–P75 · whiskers = P5–P95)",
         outname="fig7_jitter_vu.png",
     )
 
