@@ -293,7 +293,7 @@ def _grouped_boxplot(group_keys, group_label_fmt, record_fn, title, outname):
             if med <= 0:
                 continue
             positions.append(cursor + i * slot + slot / 2)
-            data.append(arr / med)
+            data.append((arr / med) * 100.0)
             colors.append(ENGINES[eid]["color"])
             tick_labels.append(ENGINE_SHORT[eid].split()[-1])
             any_in_group = True
@@ -337,10 +337,24 @@ def _grouped_boxplot(group_keys, group_label_fmt, record_fn, title, outname):
                 bbox=dict(boxstyle="round,pad=0.25", fc="white",
                           ec="#cbd5e1", lw=0.8))
 
-    ax.set_ylabel("TPM / engine median")
+    ax.set_ylabel("TPM vs engine median (%)")
     ax.set_title(title)
-    ax.axhline(1.0, color="#94a3b8", lw=0.8, ls="--", zorder=1)
-    ax.set_ylim(bottom=0)
+    ax.axhline(100.0, color="#94a3b8", lw=0.8, ls="--", zorder=1)
+    # Tight Y-range driven by actual P5/P95 whisker extremes across all boxes,
+    # padded a hair so whiskers don't touch the frame.
+    p5s  = [float(np.percentile(d, 5))  for d in data]
+    p95s = [float(np.percentile(d, 95)) for d in data]
+    y_lo = max(0.0, min(p5s) - 1.5)
+    y_hi = max(p95s) + 1.5
+    # Always include the 100% reference line and enforce a minimum visible span.
+    y_lo = min(y_lo, 99.0)
+    y_hi = max(y_hi, 101.0)
+    if y_hi - y_lo < 6.0:
+        pad = (6.0 - (y_hi - y_lo)) / 2
+        y_lo -= pad
+        y_hi += pad
+    ax.set_ylim(y_lo, y_hi)
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f"{v:.0f}%"))
     ax.set_xlim(-gap / 2, cursor - gap / 2)
 
     legend_patches = [plt.Rectangle((0, 0), 1, 1, color=ENGINES[e]["color"], alpha=0.88,
