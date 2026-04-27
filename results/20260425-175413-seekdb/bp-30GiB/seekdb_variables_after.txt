@@ -1,0 +1,10 @@
+name	value
+enable_user_defined_rewrite_rules	True
+freeze_trigger_percentage	70
+memory_limit	110G
+memstore_limit_percentage	0
+micro_block_merge_verify_level	0
+syslog_level	ERROR
+writing_throttling_trigger_percentage	100
+_enable_defensive_check	0
+_lcl_op_interval	0ms

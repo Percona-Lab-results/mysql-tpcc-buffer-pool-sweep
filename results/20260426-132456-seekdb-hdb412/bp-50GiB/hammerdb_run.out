@@ -1,0 +1,13 @@
+jobid=69EE1233650503E283037333
+num_vu=80
+rampup_min=2
+duration_min=8
+tc_refresh_sec=1
+hammerdb_version=4.12
+---
+TRANSACTION RESPONSE TIMES
+
+TRANSACTION COUNT
+
+HAMMERDB RESULT
+
