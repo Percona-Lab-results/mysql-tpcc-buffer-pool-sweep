@@ -1,0 +1,43 @@
+{
+  "timestamp_utc": "2026-04-28T11:28:27Z",
+  "benchmark": {
+    "tool": "HammerDB",
+    "tool_version": "5.0",
+    "workload": "TPC-C",
+    "driver": "timed",
+    "num_virtual_users": 80,
+    "warehouses": 1000,
+    "rampup_minutes": 10,
+    "duration_minutes": 60,
+    "tc_refresh_seconds": 1,
+    "allwarehouse": true,
+    "timeprofile": false,
+    "no_stored_procs": true
+  },
+  "database": {
+    "engine": "seekdb",
+    "mode": "native",
+    "image": "native-deb",
+    "version": "5.7.25-OceanBase seekdb-v1.2.0.0",
+    "container": "seekdb",
+    "host": "127.0.0.1",
+    "port": 2881
+  },
+  "tuning": {
+    "memory_limit_gib": 10,
+    "cgroup_memory_max_gib": 13
+  },
+  "paths": {
+    "backup_dir": "/backup/seekdb",
+    "data_dir": "/data/seekdb",
+    "hammerdb_dir": "/opt/HammerDB-5.0",
+    "hammerdb_run_script": "/root/benchmarks/hammerdb_run_seekdb.tcl"
+  },
+  "host": {
+    "hostname": "beast-node2.tp.int.percona.com",
+    "kernel": "6.8.0-60-generic",
+    "cpu_count": 80,
+    "ram_gib": 187.54,
+    "cpu_governor": "performance"
+  }
+}

@@ -1,12 +1,17 @@
 #!/bin/bash
 # Sweep SeekDB MEMORY_LIMIT and run HammerDB TPC-C at each setting.
 #
+# SEEKDB_MODE selects how SeekDB is managed:
+#   docker (default)  - docker run against oceanbase/seekdb:latest
+#   native            - systemctl start/stop against the seekdb deb package
+#
 # Per iteration:
-#   1. Stop + remove the seekdb container.
+#   1. Stop the seekdb instance (docker rm or systemctl stop).
 #   2. rsync /backup/seekdb/ -> /data/seekdb/ (clean known-good snapshot).
 #   3. Drop OS page cache.
-#   4. Start seekdb with MEMORY_LIMIT=<size>G.
-#   5. Apply SeekDB tuning (same as start_seekdb.sh).
+#   4. Start seekdb with MEMORY_LIMIT=<size>G
+#      (docker: -e MEMORY_LIMIT; native: rewrite /etc/seekdb/seekdb.cnf).
+#   5. Apply SeekDB tuning via ALTER SYSTEM / SET GLOBAL.
 #   6. Start per-second collectors and run HammerDB (no stored procedures).
 #
 # Config (override via env):
@@ -28,6 +33,11 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 HAMMERDB_DIR="${HAMMERDB_DIR:-/opt/HammerDB-5.0}"
+
+# SeekDB mode: "docker" (default) or "native" (systemd service started
+# from the seekdb deb package installed at /usr/bin/seekdb).
+SEEKDB_MODE="${SEEKDB_MODE:-docker}"
+
 SEEKDB_CONTAINER="${SEEKDB_CONTAINER:-seekdb}"
 SEEKDB_IMAGE="${SEEKDB_IMAGE:-oceanbase/seekdb:latest}"
 SEEKDB_HOST="${SEEKDB_HOST:-127.0.0.1}"
@@ -39,8 +49,12 @@ DATA_DIR="${DATA_DIR:-/data/seekdb}"
 
 # Container-internal UID that seekdb runs as (the entrypoint chowns on
 # first boot; we replicate here because rsync from a root-owned backup
-# leaves wrong ownership).
+# leaves wrong ownership). Native mode runs as root, so UID 0 as well.
 SEEKDB_DATA_UID="${SEEKDB_DATA_UID:-0}"
+
+# Native-mode only:
+SEEKDB_SERVICE="${SEEKDB_SERVICE:-seekdb}"            # systemd unit name
+SEEKDB_CNF="${SEEKDB_CNF:-/etc/seekdb/seekdb.cnf}"    # cnf consumed by systemd_start
 
 if [[ -n "${SWEEP_SIZES_GIB:-}" ]]; then
     # shellcheck disable=SC2206
@@ -55,7 +69,7 @@ DURATION_MIN="${DURATION_MIN:-60}"
 TC_REFRESH_SEC="${TC_REFRESH_SEC:-1}"
 
 TS=$(date +%Y%m%d-%H%M%S)
-RESULTS_ROOT="$SCRIPT_DIR/results/$TS-seekdb"
+RESULTS_ROOT="$SCRIPT_DIR/results/$TS-seekdb-$SEEKDB_MODE"
 mkdir -p "$RESULTS_ROOT"
 
 log()  { echo "[$(date '+%H:%M:%S')] $*"; }
@@ -70,12 +84,33 @@ seekdb_cli() {
     mysql -h "$SEEKDB_HOST" -P "$SEEKDB_PORT" -u"$SEEKDB_USER" -p"$SEEKDB_PASS" "$@"
 }
 
-stop_seekdb() {
+stop_seekdb_docker() {
     if docker ps --format '{{.Names}}' | grep -qx "$SEEKDB_CONTAINER"; then
         log "Stopping $SEEKDB_CONTAINER"
         docker stop -t 120 "$SEEKDB_CONTAINER" >/dev/null
     fi
     docker rm "$SEEKDB_CONTAINER" >/dev/null 2>&1 || true
+}
+
+stop_seekdb_native() {
+    if systemctl is-active --quiet "$SEEKDB_SERVICE"; then
+        log "Stopping systemd unit $SEEKDB_SERVICE"
+        systemctl stop "$SEEKDB_SERVICE"
+    fi
+    # Give the OS time to release the port before a restore.
+    local deadline=$(( $(date +%s) + 60 ))
+    while ss -lntp 2>/dev/null | grep -q ":$SEEKDB_PORT\b"; do
+        (( $(date +%s) > deadline )) && { log "WARN: port $SEEKDB_PORT still open"; break; }
+        sleep 1
+    done
+}
+
+stop_seekdb() {
+    case "$SEEKDB_MODE" in
+        docker) stop_seekdb_docker ;;
+        native) stop_seekdb_native ;;
+        *)      die "unknown SEEKDB_MODE='$SEEKDB_MODE'" ;;
+    esac
 }
 
 restore_datadir() {
@@ -110,12 +145,25 @@ drop_os_cache() {
     fi
 }
 
-start_seekdb() {
+cgroup_cap_gib() {
+    # Hard cgroup cap = SeekDB's soft memory_limit + 25% headroom.
+    # The +25% lets SeekDB's internal allocations (thread stacks, RPC
+    # buffers, compaction scratch) fit above the buffer/memstore budget
+    # without the OOM killer landing mid-run. Always rounded up.
     local mem_gib="$1"
-    log "Starting $SEEKDB_CONTAINER with MEMORY_LIMIT=${mem_gib}G"
+    awk -v m="$mem_gib" 'BEGIN{printf "%d", (m*1.25)+0.5}'
+}
+
+start_seekdb_docker() {
+    local mem_gib="$1"
+    local cgroup_gib
+    cgroup_gib=$(cgroup_cap_gib "$mem_gib")
+    log "Starting $SEEKDB_CONTAINER with MEMORY_LIMIT=${mem_gib}G (cgroup cap=${cgroup_gib}G)"
     docker run -d \
         --name "$SEEKDB_CONTAINER" \
         --restart no \
+        --memory "${cgroup_gib}g" \
+        --memory-swap "${cgroup_gib}g" \
         -e MEMORY_LIMIT="${mem_gib}G" \
         -e LOG_DISK_SIZE=32G \
         -e CPU_COUNT=0 \
@@ -144,8 +192,70 @@ start_seekdb() {
     die "SeekDB did not become ready in time"
 }
 
+write_native_cnf() {
+    # Rewrite /etc/seekdb/seekdb.cnf with the sweep's MEMORY_LIMIT. Other
+    # parameters (base-dir/data-dir/redo-dir/port/log_disk_size/
+    # datafile_maxsize) are stable across iterations.
+    local mem_gib="$1"
+    cat > "$SEEKDB_CNF" <<EOF
+base-dir=$DATA_DIR
+data-dir=$DATA_DIR/store
+redo-dir=$DATA_DIR/store/redo
+
+port=$SEEKDB_PORT
+cpu_count=0
+memory_limit=${mem_gib}G
+log_disk_size=32G
+datafile_maxsize=512G
+EOF
+}
+
+start_seekdb_native() {
+    local mem_gib="$1"
+    local cgroup_gib
+    cgroup_gib=$(cgroup_cap_gib "$mem_gib")
+    write_native_cnf "$mem_gib"
+    log "Starting native $SEEKDB_SERVICE with MEMORY_LIMIT=${mem_gib}G (cgroup cap=${cgroup_gib}G)"
+    # systemd's MemoryMax is persistent across daemon-reload but resets
+    # at unit reinstall; `--runtime` scopes it to the current boot. We
+    # want per-iteration scope, so always re-apply before starting.
+    systemctl set-property --runtime "$SEEKDB_SERVICE" "MemoryMax=${cgroup_gib}G" 2>&1 \
+        | sed 's/^/  /' >&2 || log "WARN: set-property MemoryMax failed"
+    systemctl start "$SEEKDB_SERVICE"
+
+    log "Waiting for SeekDB to accept connections (up to 5 min)"
+    for i in $(seq 1 300); do
+        if ! systemctl is-active --quiet "$SEEKDB_SERVICE"; then
+            log "Unit went inactive during startup. journalctl -u $SEEKDB_SERVICE tail:"
+            journalctl -u "$SEEKDB_SERVICE" --no-pager -n 30 2>&1 | sed 's/^/  /' >&2
+            die "SeekDB systemd unit '$SEEKDB_SERVICE' is not active"
+        fi
+        if seekdb_cli -e 'SELECT 1' >/dev/null 2>&1; then
+            log "SeekDB ready after ${i}s"
+            return 0
+        fi
+        sleep 1
+    done
+    die "SeekDB did not become ready in time"
+}
+
+start_seekdb() {
+    case "$SEEKDB_MODE" in
+        docker) start_seekdb_docker "$@" ;;
+        native) start_seekdb_native "$@" ;;
+        *)      die "unknown SEEKDB_MODE='$SEEKDB_MODE'" ;;
+    esac
+}
+
 apply_tuning() {
-    log "Applying SeekDB tuning"
+    # The cnf's memory_limit only applies at first bootstrap — subsequent
+    # container/service restarts read the persisted value from the data
+    # dictionary. Force it via ALTER SYSTEM on every iteration so the
+    # sweep's MEMORY_LIMIT actually takes effect.
+    local mem_gib="$1"
+    log "Applying SeekDB tuning (memory_limit=${mem_gib}G)"
+    seekdb_cli -e "ALTER SYSTEM SET memory_limit='${mem_gib}G';" >/dev/null 2>&1 \
+        || log "WARN: ALTER SYSTEM SET memory_limit failed"
     seekdb_cli <<'SQL' >/dev/null 2>&1 || log "WARN: some tuning statements failed"
 ALTER SYSTEM SET _enable_defensive_check = FALSE;
 ALTER SYSTEM SET _lcl_op_interval = '0ms';
@@ -157,6 +267,20 @@ ALTER SYSTEM SET freeze_trigger_percentage = 70;
 ALTER SYSTEM SET enable_user_defined_rewrite_rules = TRUE;
 SET GLOBAL ob_query_timeout = 3600000000;
 SQL
+
+    # Verify the value the server now reports matches what we asked for.
+    local actual
+    actual=$(seekdb_cli oceanbase -N -B \
+        -e "SELECT value FROM GV\$OB_PARAMETERS WHERE name='memory_limit' LIMIT 1;" 2>/dev/null | head -1)
+    if [[ "$actual" != "${mem_gib}G" ]]; then
+        log "WARN: memory_limit reports '$actual', expected '${mem_gib}G'"
+    else
+        log "memory_limit verified: ${actual}"
+    fi
+
+    # memory_limit changes require the server to rebalance internal
+    # allocations. Give it a few seconds before hammering it with traffic.
+    sleep 10
 }
 
 # ---------- snapshots ----------
@@ -358,14 +482,16 @@ write_manifest() {
   },
   "database": {
     "engine": "seekdb",
-    "image": "$SEEKDB_IMAGE",
+    "mode": "$SEEKDB_MODE",
+    "image": "$([[ "$SEEKDB_MODE" == "docker" ]] && echo "$SEEKDB_IMAGE" || echo "native-deb")",
     "version": "${ver:-unknown}",
-    "container": "$SEEKDB_CONTAINER",
+    "container": "$([[ "$SEEKDB_MODE" == "docker" ]] && echo "$SEEKDB_CONTAINER" || echo "$SEEKDB_SERVICE")",
     "host": "$SEEKDB_HOST",
     "port": $SEEKDB_PORT
   },
   "tuning": {
-    "memory_limit_gib": $size_gib
+    "memory_limit_gib": $size_gib,
+    "cgroup_memory_max_gib": $(cgroup_cap_gib "$size_gib")
   },
   "paths": {
     "backup_dir": "$BACKUP_DIR",
@@ -472,7 +598,7 @@ for size in "${SIZES_GIB[@]}"; do
     restore_datadir
     drop_os_cache
     start_seekdb "$size"
-    apply_tuning
+    apply_tuning "$size"
 
     dump_variables     "$iter_dir/seekdb_variables_before.txt"
     dump_tenant_status "$iter_dir/seekdb_status_before.txt"

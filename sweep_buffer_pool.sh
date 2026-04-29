@@ -474,6 +474,7 @@ run_hammerdb() {
     HDB_DURATION="$DURATION_MIN" \
     HDB_TC_RATE="$TC_REFRESH_SEC" \
     HDB_OUTFILE="$outfile" \
+    HDB_NO_STORED_PROCS="${HDB_NO_STORED_PROCS:-false}" \
         ./hammerdbcli auto "$tcl" 2>&1
     cd - >/dev/null
 }
@@ -544,7 +545,8 @@ write_manifest() {
     "duration_minutes": $DURATION_MIN,
     "tc_refresh_seconds": $TC_REFRESH_SEC,
     "allwarehouse": true,
-    "timeprofile": false
+    "timeprofile": false,
+    "no_stored_procs": $([[ "${HDB_NO_STORED_PROCS:-false}" == "true" ]] && echo true || echo false)
   },
   "database": {
     "engine": "$([[ "$DB_ENGINE" == "maria" ]] && echo mariadb || echo mysql)",
