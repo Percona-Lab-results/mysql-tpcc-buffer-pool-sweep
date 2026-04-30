@@ -79,6 +79,14 @@ Source runs:
 | MariaDB 12.2.2    | `results/20260424-074813-mariadb-12/` |
 | MariaDB 12.3.1-rc | `results/20260423-092543-mariadb-12.3/` |
 
+### Charts — BP sweep
+
+![TPROC-C throughput vs buffer pool size](report_assets/fig1_bp_line.png)
+
+![TPM jitter — buffer pool iterations](report_assets/fig6_jitter_bp.png)
+
+![TPM over time at BP 50G / 80 VU](report_assets/fig5_timeseries.png)
+
 ## Virtual-user sweep (BP = 110 GiB)
 
 Fixed BP=110 GiB, sweep VU from 10 to 320.
@@ -167,6 +175,14 @@ Source runs:
 | MariaDB 12.3.1-rc | 80  | `results/20260423-211213-mariadb-12.3/` |
 | MariaDB 12.3.1-rc | 160 | `results/20260423-222952-mariadb-12.3/` |
 | MariaDB 12.3.1-rc | 320 | `results/20260423-234730-mariadb-12.3/` |
+
+### Charts — VU sweep
+
+![TPROC-C throughput vs concurrency](report_assets/fig3_vu_line.png)
+
+![Concurrency scaling efficiency](report_assets/fig4_scaling.png)
+
+![TPM jitter — virtual users iterations](report_assets/fig7_jitter_vu.png)
 
 ## Cross-sweep comparison at the sweet spot
 

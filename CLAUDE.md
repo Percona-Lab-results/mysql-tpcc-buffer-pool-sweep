@@ -1,5 +1,25 @@
 # benchmarks/ — MySQL + HammerDB harness
 
+## Report workflow
+
+- `build_charts.py` → writes PNGs into `report_assets/` for REPORT.md
+- `build_report.py` → writes `REPORT.md` from `data/runs.json`
+- `build_docx.py` → writes `REPORT.docx`
+- `build_gdoc.py` → writes `report_gdoc.html` (self-contained, charts inlined as base64) for Google Docs upload
+
+Google Doc: `1kx9s9FHec0MQ2_7MUy7yMMrKOQxPPmAfbk4hoZM23T8`
+(Database Benchmark Comparison — TPROC-C Report (hammerdb_2)).
+Update in-place — never delete and re-create — to preserve the URL:
+
+```
+python build_gdoc.py
+gws drive files update \
+  --params '{"fileId":"1kx9s9FHec0MQ2_7MUy7yMMrKOQxPPmAfbk4hoZM23T8"}' \
+  --upload report_gdoc.html --upload-content-type "text/html"
+```
+
+Google can return transient 500s on large HTML conversions — retry once.
+
 ## Layout
 
 - `start_mysql.sh` / `start_mysql97.sh` — launch MySQL 8.4 / 9.7 in Docker with `--network host`, mount the datadir from `/data/mysql-8.4` (or `/data/mysql-9.7`), and convert users to `mysql_native_password` so HammerDB can connect over plain TCP.
