@@ -57,6 +57,25 @@ case "$MYSQL_PROFILE" in
         # over plain TCP with caching_sha2_password once the server-side
         # auth cache has been primed for that user (see ensure_native_auth).
         ;;
+    9.7-nopgo)
+        # MySQL 9.7.0 built WITHOUT profile-guided optimisation. Image
+        # evgeniypatlan/test-images:mysql-9.7.0-tarball is Percona's
+        # issue-CUSTOM111 tarball (FPROFILE_USE=OFF) packaged as a
+        # Debian/Ubuntu-based container with its own docker-entrypoint.sh.
+        # Same auth quirks as the LTS 9.7 profile (caching_sha2_password
+        # prime over TLS — handled by ensure_native_auth).
+        DB_ENGINE=mysql
+        : "${BACKUP_DIR:=/backup/mysql-9.7}"
+        : "${DATA_DIR:=/data/mysql-9.7-nopgo}"
+        : "${CONTAINER:=mysql97nopgo}"
+        : "${CNF:=$SCRIPT_DIR/mysql97.cnf}"
+        : "${MYSQL_IMAGE:=evgeniypatlan/test-images:mysql-9.7.0-tarball}"
+        # Tarball image reads /etc/my.cnf, which !includedir's
+        # /etc/mysql/conf.d/ — same convention as mysql:8.4.8.
+        : "${CNF_MOUNT:=/etc/mysql/conf.d/mysql.cnf}"
+        # This image runs mysqld as uid 1001, not 27.
+        : "${DATA_UID:=1001}"
+        ;;
     maria-11)
         DB_ENGINE=maria
         : "${BACKUP_DIR:=/backup/mariadb-11}"
@@ -282,7 +301,7 @@ ensure_native_auth() {
     # scramble step entirely. Must be TCP+TLS from the host.
     # NOTE: do not FLUSH PRIVILEGES here — it would clear the cache we just
     # populated.
-    if [[ "$MYSQL_PROFILE" == "9.7" ]]; then
+    if [[ "$MYSQL_PROFILE" == "9.7" || "$MYSQL_PROFILE" == "9.7-nopgo" ]]; then
         local ca="$DATA_DIR/ca.pem"
         [[ -f "$ca" ]] || die "ca.pem not found at $ca — cannot prime caching_sha2 cache"
         mysql -h 127.0.0.1 -P 3306 -uroot -prootpassword \
@@ -555,7 +574,7 @@ write_manifest() {
     "version": "${mysql_ver:-unknown}",
     "storage_engine": "innodb",
     "partitioned": true,
-    "authentication": "$([[ "$MYSQL_PROFILE" == "9.7" ]] && echo caching_sha2_password || echo mysql_native_password)",
+    "authentication": "$([[ "$MYSQL_PROFILE" == "9.7" || "$MYSQL_PROFILE" == "9.7-nopgo" ]] && echo caching_sha2_password || echo mysql_native_password)",
     "ssl": $([[ "${HDB_SSL:-false}" == "true" ]] && echo true || echo false)
   },
   "innodb": {

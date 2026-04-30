@@ -1,0 +1,1764 @@
+[16:34:03] Running HammerDB (engine=mysql rampup=2m duration=8m num_vu=80)
+HammerDB CLI v5.0
+Copyright © HammerDB Ltd hosted by tpc.org 2019-2025
+Type "help" for a list of commands
+Initialized Jobs on-disk database /tmp/hammer.DB using existing tables (248,897,536 bytes)
+SETTING CONFIGURATION (num_vu=80 rampup=2m duration=8m tc_rate=1s)
+Database set to MySQL
+Benchmark set to TPC-C for MySQL
+Value 127.0.0.1 for connection:mysql_host is the same as existing value 127.0.0.1, no change made
+Value 3306 for connection:mysql_port is the same as existing value 3306, no change made
+Value null for connection:mysql_socket is the same as existing value null, no change made
+Value false for connection:mysql_ssl is the same as existing value false, no change made
+Value root for tpcc:mysql_user is the same as existing value root, no change made
+Value rootpassword for tpcc:mysql_pass is the same as existing value rootpassword, no change made
+Value tpcc for tpcc:mysql_dbase is the same as existing value tpcc, no change made
+Value timed for tpcc:mysql_driver is the same as existing value timed, no change made
+Changed tpcc:mysql_rampup from 10 to 2 for MySQL
+Changed tpcc:mysql_duration from 60 to 8 for MySQL
+Value true for tpcc:mysql_allwarehouse is the same as existing value true, no change made
+Value false for tpcc:mysql_timeprofile is the same as existing value false, no change made
+Value 80 for tpcc:mysql_num_vu is the same as existing value 80, no change made
+Changed tpcc:mysql_no_stored_procs from true to false for MySQL
+Transaction Counter refresh rate set to 1
+Transaction Counter log to temp set to 1
+Transaction Counter unique log name set to 1
+Transaction Counter timestamps set to 1
+Script loaded, Type "print script" to view
+TEST STARTED
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+Vuser 3 created - WAIT IDLE
+Vuser 4 created - WAIT IDLE
+Vuser 5 created - WAIT IDLE
+Vuser 6 created - WAIT IDLE
+Vuser 7 created - WAIT IDLE
+Vuser 8 created - WAIT IDLE
+Vuser 9 created - WAIT IDLE
+Vuser 10 created - WAIT IDLE
+Vuser 11 created - WAIT IDLE
+Vuser 12 created - WAIT IDLE
+Vuser 13 created - WAIT IDLE
+Vuser 14 created - WAIT IDLE
+Vuser 15 created - WAIT IDLE
+Vuser 16 created - WAIT IDLE
+Vuser 17 created - WAIT IDLE
+Vuser 18 created - WAIT IDLE
+Vuser 19 created - WAIT IDLE
+Vuser 20 created - WAIT IDLE
+Vuser 21 created - WAIT IDLE
+Vuser 22 created - WAIT IDLE
+Vuser 23 created - WAIT IDLE
+Vuser 24 created - WAIT IDLE
+Vuser 25 created - WAIT IDLE
+Vuser 26 created - WAIT IDLE
+Vuser 27 created - WAIT IDLE
+Vuser 28 created - WAIT IDLE
+Vuser 29 created - WAIT IDLE
+Vuser 30 created - WAIT IDLE
+Vuser 31 created - WAIT IDLE
+Vuser 32 created - WAIT IDLE
+Vuser 33 created - WAIT IDLE
+Vuser 34 created - WAIT IDLE
+Vuser 35 created - WAIT IDLE
+Vuser 36 created - WAIT IDLE
+Vuser 37 created - WAIT IDLE
+Vuser 38 created - WAIT IDLE
+Vuser 39 created - WAIT IDLE
+Vuser 40 created - WAIT IDLE
+Vuser 41 created - WAIT IDLE
+Vuser 42 created - WAIT IDLE
+Vuser 43 created - WAIT IDLE
+Vuser 44 created - WAIT IDLE
+Vuser 45 created - WAIT IDLE
+Vuser 46 created - WAIT IDLE
+Vuser 47 created - WAIT IDLE
+Vuser 48 created - WAIT IDLE
+Vuser 49 created - WAIT IDLE
+Vuser 50 created - WAIT IDLE
+Vuser 51 created - WAIT IDLE
+Vuser 52 created - WAIT IDLE
+Vuser 53 created - WAIT IDLE
+Vuser 54 created - WAIT IDLE
+Vuser 55 created - WAIT IDLE
+Vuser 56 created - WAIT IDLE
+Vuser 57 created - WAIT IDLE
+Vuser 58 created - WAIT IDLE
+Vuser 59 created - WAIT IDLE
+Vuser 60 created - WAIT IDLE
+Vuser 61 created - WAIT IDLE
+Vuser 62 created - WAIT IDLE
+Vuser 63 created - WAIT IDLE
+Vuser 64 created - WAIT IDLE
+Vuser 65 created - WAIT IDLE
+Vuser 66 created - WAIT IDLE
+Vuser 67 created - WAIT IDLE
+Vuser 68 created - WAIT IDLE
+Vuser 69 created - WAIT IDLE
+Vuser 70 created - WAIT IDLE
+Vuser 71 created - WAIT IDLE
+Vuser 72 created - WAIT IDLE
+Vuser 73 created - WAIT IDLE
+Vuser 74 created - WAIT IDLE
+Vuser 75 created - WAIT IDLE
+Vuser 76 created - WAIT IDLE
+Vuser 77 created - WAIT IDLE
+Vuser 78 created - WAIT IDLE
+Vuser 79 created - WAIT IDLE
+Vuser 80 created - WAIT IDLE
+Vuser 81 created - WAIT IDLE
+81 Virtual Users Created with Monitor VU
+Transaction Counter logging activated to /tmp/hdbtcount_69F232FBEA7203E253232303.log
+Transaction Counter Started
+Transaction Counter thread running with threadid:tid0x7f0e7d7fa6c0
+Vuser 1:RUNNING
+Vuser 1:Ssl_cipher 
+Vuser 1:DBVersion:9.7.0
+Vuser 1:Beginning rampup time of 2 minutes
+0 MySQL tpm
+Vuser 2:RUNNING
+Vuser 2:Ssl_cipher 
+Vuser 2:Assigned 13 WIDs = 1 81 161 241 321 401 481 561 641 721 801 881 961 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 2:Processing 10000000 transactions with output suppressed...
+Vuser 3:RUNNING
+Vuser 3:Ssl_cipher 
+Vuser 3:Assigned 13 WIDs = 2 82 162 242 322 402 482 562 642 722 802 882 962 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 3:Processing 10000000 transactions with output suppressed...
+2760 MySQL tpm
+Vuser 4:RUNNING
+Vuser 4:Ssl_cipher 
+Vuser 4:Assigned 13 WIDs = 3 83 163 243 323 403 483 563 643 723 803 883 963 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 4:Processing 10000000 transactions with output suppressed...
+Vuser 5:RUNNING
+Vuser 5:Ssl_cipher 
+Vuser 5:Assigned 13 WIDs = 4 84 164 244 324 404 484 564 644 724 804 884 964 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 5:Processing 10000000 transactions with output suppressed...
+17880 MySQL tpm
+Vuser 6:RUNNING
+Vuser 6:Ssl_cipher 
+Vuser 6:Assigned 13 WIDs = 5 85 165 245 325 405 485 565 645 725 805 885 965 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 6:Processing 10000000 transactions with output suppressed...
+Vuser 7:RUNNING
+Vuser 7:Ssl_cipher 
+Vuser 7:Assigned 13 WIDs = 6 86 166 246 326 406 486 566 646 726 806 886 966 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 7:Processing 10000000 transactions with output suppressed...
+30900 MySQL tpm
+Vuser 8:RUNNING
+Vuser 8:Ssl_cipher 
+Vuser 8:Assigned 13 WIDs = 7 87 167 247 327 407 487 567 647 727 807 887 967 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 8:Processing 10000000 transactions with output suppressed...
+Vuser 9:RUNNING
+Vuser 9:Ssl_cipher 
+Vuser 9:Assigned 13 WIDs = 8 88 168 248 328 408 488 568 648 728 808 888 968 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 9:Processing 10000000 transactions with output suppressed...
+50040 MySQL tpm
+Vuser 10:RUNNING
+Vuser 10:Ssl_cipher 
+Vuser 10:Assigned 13 WIDs = 9 89 169 249 329 409 489 569 649 729 809 889 969 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 10:Processing 10000000 transactions with output suppressed...
+Vuser 11:RUNNING
+Vuser 11:Ssl_cipher 
+Vuser 11:Assigned 13 WIDs = 10 90 170 250 330 410 490 570 650 730 810 890 970 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 11:Processing 10000000 transactions with output suppressed...
+65700 MySQL tpm
+Vuser 12:RUNNING
+Vuser 12:Ssl_cipher 
+Vuser 12:Assigned 13 WIDs = 11 91 171 251 331 411 491 571 651 731 811 891 971 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 12:Processing 10000000 transactions with output suppressed...
+Vuser 13:RUNNING
+Vuser 13:Ssl_cipher 
+Vuser 13:Assigned 13 WIDs = 12 92 172 252 332 412 492 572 652 732 812 892 972 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 13:Processing 10000000 transactions with output suppressed...
+90960 MySQL tpm
+Vuser 14:RUNNING
+Vuser 14:Ssl_cipher 
+Vuser 14:Assigned 13 WIDs = 13 93 173 253 333 413 493 573 653 733 813 893 973 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 14:Processing 10000000 transactions with output suppressed...
+Vuser 15:RUNNING
+Vuser 15:Ssl_cipher 
+Vuser 15:Assigned 13 WIDs = 14 94 174 254 334 414 494 574 654 734 814 894 974 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 15:Processing 10000000 transactions with output suppressed...
+109140 MySQL tpm
+Vuser 16:RUNNING
+Vuser 16:Ssl_cipher 
+Vuser 16:Assigned 13 WIDs = 15 95 175 255 335 415 495 575 655 735 815 895 975 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 16:Processing 10000000 transactions with output suppressed...
+Vuser 17:RUNNING
+Vuser 17:Ssl_cipher 
+Vuser 17:Assigned 13 WIDs = 16 96 176 256 336 416 496 576 656 736 816 896 976 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 17:Processing 10000000 transactions with output suppressed...
+136980 MySQL tpm
+Vuser 18:RUNNING
+Vuser 18:Ssl_cipher 
+Vuser 18:Assigned 13 WIDs = 17 97 177 257 337 417 497 577 657 737 817 897 977 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 18:Processing 10000000 transactions with output suppressed...
+Vuser 19:RUNNING
+Vuser 19:Ssl_cipher 
+Vuser 19:Assigned 13 WIDs = 18 98 178 258 338 418 498 578 658 738 818 898 978 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 19:Processing 10000000 transactions with output suppressed...
+158880 MySQL tpm
+Vuser 20:RUNNING
+Vuser 20:Ssl_cipher 
+Vuser 20:Assigned 13 WIDs = 19 99 179 259 339 419 499 579 659 739 819 899 979 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 20:Processing 10000000 transactions with output suppressed...
+Vuser 21:RUNNING
+Vuser 21:Ssl_cipher 
+Vuser 21:Assigned 13 WIDs = 20 100 180 260 340 420 500 580 660 740 820 900 980 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 21:Processing 10000000 transactions with output suppressed...
+172740 MySQL tpm
+Vuser 22:RUNNING
+Vuser 22:Ssl_cipher 
+Vuser 22:Assigned 13 WIDs = 21 101 181 261 341 421 501 581 661 741 821 901 981 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 22:Processing 10000000 transactions with output suppressed...
+Vuser 23:RUNNING
+Vuser 23:Ssl_cipher 
+Vuser 23:Assigned 13 WIDs = 22 102 182 262 342 422 502 582 662 742 822 902 982 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 23:Processing 10000000 transactions with output suppressed...
+189780 MySQL tpm
+Vuser 24:RUNNING
+Vuser 24:Ssl_cipher 
+Vuser 24:Assigned 13 WIDs = 23 103 183 263 343 423 503 583 663 743 823 903 983 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 24:Processing 10000000 transactions with output suppressed...
+Vuser 25:RUNNING
+Vuser 25:Ssl_cipher 
+Vuser 25:Assigned 13 WIDs = 24 104 184 264 344 424 504 584 664 744 824 904 984 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 25:Processing 10000000 transactions with output suppressed...
+223080 MySQL tpm
+Vuser 26:RUNNING
+Vuser 26:Ssl_cipher 
+Vuser 26:Assigned 13 WIDs = 25 105 185 265 345 425 505 585 665 745 825 905 985 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 26:Processing 10000000 transactions with output suppressed...
+Vuser 27:RUNNING
+Vuser 27:Ssl_cipher 
+Vuser 27:Assigned 13 WIDs = 26 106 186 266 346 426 506 586 666 746 826 906 986 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 27:Processing 10000000 transactions with output suppressed...
+253080 MySQL tpm
+Vuser 28:RUNNING
+Vuser 28:Ssl_cipher 
+Vuser 28:Assigned 13 WIDs = 27 107 187 267 347 427 507 587 667 747 827 907 987 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 28:Processing 10000000 transactions with output suppressed...
+Vuser 29:RUNNING
+Vuser 29:Ssl_cipher 
+Vuser 29:Assigned 13 WIDs = 28 108 188 268 348 428 508 588 668 748 828 908 988 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 29:Processing 10000000 transactions with output suppressed...
+288480 MySQL tpm
+Vuser 30:RUNNING
+Vuser 30:Ssl_cipher 
+Vuser 30:Assigned 13 WIDs = 29 109 189 269 349 429 509 589 669 749 829 909 989 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 30:Processing 10000000 transactions with output suppressed...
+Vuser 31:RUNNING
+Vuser 31:Ssl_cipher 
+Vuser 31:Assigned 13 WIDs = 30 110 190 270 350 430 510 590 670 750 830 910 990 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 31:Processing 10000000 transactions with output suppressed...
+319440 MySQL tpm
+Vuser 32:RUNNING
+Vuser 32:Ssl_cipher 
+Vuser 32:Assigned 13 WIDs = 31 111 191 271 351 431 511 591 671 751 831 911 991 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 32:Processing 10000000 transactions with output suppressed...
+Vuser 33:RUNNING
+Vuser 33:Ssl_cipher 
+Vuser 33:Assigned 13 WIDs = 32 112 192 272 352 432 512 592 672 752 832 912 992 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 33:Processing 10000000 transactions with output suppressed...
+336900 MySQL tpm
+Vuser 34:RUNNING
+Vuser 34:Ssl_cipher 
+Vuser 34:Assigned 13 WIDs = 33 113 193 273 353 433 513 593 673 753 833 913 993 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 34:Processing 10000000 transactions with output suppressed...
+Vuser 35:RUNNING
+Vuser 35:Ssl_cipher 
+Vuser 35:Assigned 13 WIDs = 34 114 194 274 354 434 514 594 674 754 834 914 994 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 35:Processing 10000000 transactions with output suppressed...
+360120 MySQL tpm
+Vuser 36:RUNNING
+Vuser 36:Ssl_cipher 
+Vuser 36:Assigned 13 WIDs = 35 115 195 275 355 435 515 595 675 755 835 915 995 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 36:Processing 10000000 transactions with output suppressed...
+Vuser 37:RUNNING
+Vuser 37:Ssl_cipher 
+Vuser 37:Assigned 13 WIDs = 36 116 196 276 356 436 516 596 676 756 836 916 996 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 37:Processing 10000000 transactions with output suppressed...
+385920 MySQL tpm
+Vuser 38:RUNNING
+Vuser 38:Ssl_cipher 
+Vuser 38:Assigned 13 WIDs = 37 117 197 277 357 437 517 597 677 757 837 917 997 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 38:Processing 10000000 transactions with output suppressed...
+Vuser 39:RUNNING
+Vuser 39:Ssl_cipher 
+Vuser 39:Assigned 13 WIDs = 38 118 198 278 358 438 518 598 678 758 838 918 998 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 39:Processing 10000000 transactions with output suppressed...
+385260 MySQL tpm
+Vuser 40:RUNNING
+Vuser 40:Ssl_cipher 
+Vuser 40:Assigned 13 WIDs = 39 119 199 279 359 439 519 599 679 759 839 919 999 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 40:Processing 10000000 transactions with output suppressed...
+Vuser 41:RUNNING
+Vuser 41:Ssl_cipher 
+Vuser 41:Assigned 13 WIDs = 40 120 200 280 360 440 520 600 680 760 840 920 1000 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 41:Processing 10000000 transactions with output suppressed...
+409860 MySQL tpm
+Vuser 42:RUNNING
+Vuser 42:Ssl_cipher 
+Vuser 42:Assigned 13 WIDs = 41 121 201 281 361 441 521 601 681 761 841 921 1 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 42:Processing 10000000 transactions with output suppressed...
+Vuser 43:RUNNING
+Vuser 43:Ssl_cipher 
+Vuser 43:Assigned 13 WIDs = 42 122 202 282 362 442 522 602 682 762 842 922 2 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 43:Processing 10000000 transactions with output suppressed...
+428580 MySQL tpm
+Vuser 44:RUNNING
+Vuser 44:Ssl_cipher 
+Vuser 44:Assigned 13 WIDs = 43 123 203 283 363 443 523 603 683 763 843 923 3 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 44:Processing 10000000 transactions with output suppressed...
+Vuser 45:RUNNING
+Vuser 45:Ssl_cipher 
+Vuser 45:Assigned 13 WIDs = 44 124 204 284 364 444 524 604 684 764 844 924 4 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 45:Processing 10000000 transactions with output suppressed...
+476640 MySQL tpm
+Vuser 46:RUNNING
+Vuser 46:Ssl_cipher 
+Vuser 46:Assigned 13 WIDs = 45 125 205 285 365 445 525 605 685 765 845 925 5 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 46:Processing 10000000 transactions with output suppressed...
+Vuser 47:RUNNING
+Vuser 47:Ssl_cipher 
+Vuser 47:Assigned 13 WIDs = 46 126 206 286 366 446 526 606 686 766 846 926 6 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 47:Processing 10000000 transactions with output suppressed...
+495600 MySQL tpm
+Vuser 48:RUNNING
+Vuser 48:Ssl_cipher 
+Vuser 48:Assigned 13 WIDs = 47 127 207 287 367 447 527 607 687 767 847 927 7 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 48:Processing 10000000 transactions with output suppressed...
+Vuser 49:RUNNING
+Vuser 49:Ssl_cipher 
+Vuser 49:Assigned 13 WIDs = 48 128 208 288 368 448 528 608 688 768 848 928 8 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 49:Processing 10000000 transactions with output suppressed...
+524640 MySQL tpm
+Vuser 50:RUNNING
+Vuser 50:Ssl_cipher 
+Vuser 50:Assigned 13 WIDs = 49 129 209 289 369 449 529 609 689 769 849 929 9 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 50:Processing 10000000 transactions with output suppressed...
+Vuser 51:RUNNING
+Vuser 51:Ssl_cipher 
+Vuser 51:Assigned 13 WIDs = 50 130 210 290 370 450 530 610 690 770 850 930 10 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 51:Processing 10000000 transactions with output suppressed...
+542040 MySQL tpm
+Vuser 52:RUNNING
+Vuser 52:Ssl_cipher 
+Vuser 52:Assigned 13 WIDs = 51 131 211 291 371 451 531 611 691 771 851 931 11 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 52:Processing 10000000 transactions with output suppressed...
+Vuser 53:RUNNING
+Vuser 53:Ssl_cipher 
+Vuser 53:Assigned 13 WIDs = 52 132 212 292 372 452 532 612 692 772 852 932 12 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 53:Processing 10000000 transactions with output suppressed...
+572760 MySQL tpm
+Vuser 54:RUNNING
+Vuser 54:Ssl_cipher 
+Vuser 54:Assigned 13 WIDs = 53 133 213 293 373 453 533 613 693 773 853 933 13 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 54:Processing 10000000 transactions with output suppressed...
+Vuser 55:RUNNING
+Vuser 55:Ssl_cipher 
+Vuser 55:Assigned 13 WIDs = 54 134 214 294 374 454 534 614 694 774 854 934 14 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 55:Processing 10000000 transactions with output suppressed...
+594480 MySQL tpm
+Vuser 56:RUNNING
+Vuser 56:Ssl_cipher 
+Vuser 56:Assigned 13 WIDs = 55 135 215 295 375 455 535 615 695 775 855 935 15 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 56:Processing 10000000 transactions with output suppressed...
+Vuser 57:RUNNING
+Vuser 57:Ssl_cipher 
+Vuser 57:Assigned 13 WIDs = 56 136 216 296 376 456 536 616 696 776 856 936 16 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 57:Processing 10000000 transactions with output suppressed...
+612660 MySQL tpm
+Vuser 58:RUNNING
+Vuser 58:Ssl_cipher 
+Vuser 58:Assigned 13 WIDs = 57 137 217 297 377 457 537 617 697 777 857 937 17 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 58:Processing 10000000 transactions with output suppressed...
+Vuser 59:RUNNING
+Vuser 59:Ssl_cipher 
+Vuser 59:Assigned 13 WIDs = 58 138 218 298 378 458 538 618 698 778 858 938 18 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 59:Processing 10000000 transactions with output suppressed...
+641160 MySQL tpm
+Vuser 60:RUNNING
+Vuser 60:Ssl_cipher 
+Vuser 60:Assigned 13 WIDs = 59 139 219 299 379 459 539 619 699 779 859 939 19 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 60:Processing 10000000 transactions with output suppressed...
+Vuser 61:RUNNING
+Vuser 61:Ssl_cipher 
+Vuser 61:Assigned 13 WIDs = 60 140 220 300 380 460 540 620 700 780 860 940 20 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 61:Processing 10000000 transactions with output suppressed...
+649020 MySQL tpm
+Vuser 62:RUNNING
+Vuser 62:Ssl_cipher 
+Vuser 62:Assigned 13 WIDs = 61 141 221 301 381 461 541 621 701 781 861 941 21 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 62:Processing 10000000 transactions with output suppressed...
+Vuser 63:RUNNING
+Vuser 63:Ssl_cipher 
+Vuser 63:Assigned 13 WIDs = 62 142 222 302 382 462 542 622 702 782 862 942 22 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 63:Processing 10000000 transactions with output suppressed...
+688200 MySQL tpm
+Vuser 64:RUNNING
+Vuser 64:Ssl_cipher 
+Vuser 64:Assigned 13 WIDs = 63 143 223 303 383 463 543 623 703 783 863 943 23 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 64:Processing 10000000 transactions with output suppressed...
+Vuser 65:RUNNING
+Vuser 65:Ssl_cipher 
+Vuser 65:Assigned 13 WIDs = 64 144 224 304 384 464 544 624 704 784 864 944 24 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 65:Processing 10000000 transactions with output suppressed...
+702420 MySQL tpm
+Vuser 66:RUNNING
+Vuser 66:Ssl_cipher 
+Vuser 66:Assigned 13 WIDs = 65 145 225 305 385 465 545 625 705 785 865 945 25 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 66:Processing 10000000 transactions with output suppressed...
+Vuser 67:RUNNING
+Vuser 67:Ssl_cipher 
+Vuser 67:Assigned 13 WIDs = 66 146 226 306 386 466 546 626 706 786 866 946 26 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 67:Processing 10000000 transactions with output suppressed...
+720840 MySQL tpm
+Vuser 68:RUNNING
+Vuser 68:Ssl_cipher 
+Vuser 68:Assigned 13 WIDs = 67 147 227 307 387 467 547 627 707 787 867 947 27 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 68:Processing 10000000 transactions with output suppressed...
+Vuser 69:RUNNING
+Vuser 69:Ssl_cipher 
+Vuser 69:Assigned 13 WIDs = 68 148 228 308 388 468 548 628 708 788 868 948 28 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 69:Processing 10000000 transactions with output suppressed...
+738420 MySQL tpm
+Vuser 70:RUNNING
+Vuser 70:Ssl_cipher 
+Vuser 70:Assigned 13 WIDs = 69 149 229 309 389 469 549 629 709 789 869 949 29 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 70:Processing 10000000 transactions with output suppressed...
+Vuser 71:RUNNING
+Vuser 71:Ssl_cipher 
+Vuser 71:Assigned 13 WIDs = 70 150 230 310 390 470 550 630 710 790 870 950 30 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 71:Processing 10000000 transactions with output suppressed...
+757200 MySQL tpm
+Vuser 72:RUNNING
+Vuser 72:Ssl_cipher 
+Vuser 72:Assigned 13 WIDs = 71 151 231 311 391 471 551 631 711 791 871 951 31 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 72:Processing 10000000 transactions with output suppressed...
+Vuser 73:RUNNING
+Vuser 73:Ssl_cipher 
+Vuser 73:Assigned 13 WIDs = 72 152 232 312 392 472 552 632 712 792 872 952 32 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 73:Processing 10000000 transactions with output suppressed...
+782160 MySQL tpm
+Vuser 74:RUNNING
+Vuser 74:Ssl_cipher 
+Vuser 74:Assigned 13 WIDs = 73 153 233 313 393 473 553 633 713 793 873 953 33 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 74:Processing 10000000 transactions with output suppressed...
+Vuser 75:RUNNING
+Vuser 75:Ssl_cipher 
+Vuser 75:Assigned 13 WIDs = 74 154 234 314 394 474 554 634 714 794 874 954 34 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 75:Processing 10000000 transactions with output suppressed...
+799860 MySQL tpm
+Vuser 76:RUNNING
+Vuser 76:Ssl_cipher 
+Vuser 76:Assigned 13 WIDs = 75 155 235 315 395 475 555 635 715 795 875 955 35 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 76:Processing 10000000 transactions with output suppressed...
+Vuser 77:RUNNING
+Vuser 77:Ssl_cipher 
+Vuser 77:Assigned 13 WIDs = 76 156 236 316 396 476 556 636 716 796 876 956 36 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 77:Processing 10000000 transactions with output suppressed...
+797640 MySQL tpm
+Vuser 78:RUNNING
+Vuser 78:Ssl_cipher 
+Vuser 78:Assigned 13 WIDs = 77 157 237 317 397 477 557 637 717 797 877 957 37 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 78:Processing 10000000 transactions with output suppressed...
+Vuser 79:RUNNING
+Vuser 79:Ssl_cipher 
+Vuser 79:Assigned 13 WIDs = 78 158 238 318 398 478 558 638 718 798 878 958 38 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 79:Processing 10000000 transactions with output suppressed...
+806820 MySQL tpm
+Vuser 80:RUNNING
+Vuser 80:Ssl_cipher 
+Vuser 80:Assigned 13 WIDs = 79 159 239 319 399 479 559 639 719 799 879 959 39 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 80:Processing 10000000 transactions with output suppressed...
+Vuser 81:RUNNING
+Vuser 81:Ssl_cipher 
+Vuser 81:Assigned 13 WIDs = 80 160 240 320 400 480 560 640 720 800 880 960 40 based on VU count 80, Warehouses = 13 out of 1000
+Vuser 81:Processing 10000000 transactions with output suppressed...
+819900 MySQL tpm
+826080 MySQL tpm
+841020 MySQL tpm
+854940 MySQL tpm
+858600 MySQL tpm
+872400 MySQL tpm
+881820 MySQL tpm
+892020 MySQL tpm
+890940 MySQL tpm
+859140 MySQL tpm
+875640 MySQL tpm
+874440 MySQL tpm
+870840 MySQL tpm
+863100 MySQL tpm
+873420 MySQL tpm
+881280 MySQL tpm
+874980 MySQL tpm
+880740 MySQL tpm
+886560 MySQL tpm
+885300 MySQL tpm
+Vuser 1:Rampup 1 minutes complete ...
+895920 MySQL tpm
+897180 MySQL tpm
+897000 MySQL tpm
+921300 MySQL tpm
+897180 MySQL tpm
+880800 MySQL tpm
+897060 MySQL tpm
+907200 MySQL tpm
+907920 MySQL tpm
+895380 MySQL tpm
+880380 MySQL tpm
+834060 MySQL tpm
+853920 MySQL tpm
+868260 MySQL tpm
+873540 MySQL tpm
+908880 MySQL tpm
+924840 MySQL tpm
+937020 MySQL tpm
+937620 MySQL tpm
+925200 MySQL tpm
+903480 MySQL tpm
+911700 MySQL tpm
+875580 MySQL tpm
+890640 MySQL tpm
+903600 MySQL tpm
+913380 MySQL tpm
+905100 MySQL tpm
+886380 MySQL tpm
+904200 MySQL tpm
+851040 MySQL tpm
+853560 MySQL tpm
+816840 MySQL tpm
+863400 MySQL tpm
+841620 MySQL tpm
+868080 MySQL tpm
+841320 MySQL tpm
+858600 MySQL tpm
+793860 MySQL tpm
+797760 MySQL tpm
+824700 MySQL tpm
+765960 MySQL tpm
+837720 MySQL tpm
+736920 MySQL tpm
+839400 MySQL tpm
+870420 MySQL tpm
+873060 MySQL tpm
+898380 MySQL tpm
+881340 MySQL tpm
+915840 MySQL tpm
+882660 MySQL tpm
+899160 MySQL tpm
+893820 MySQL tpm
+893100 MySQL tpm
+890040 MySQL tpm
+897300 MySQL tpm
+873300 MySQL tpm
+884280 MySQL tpm
+878580 MySQL tpm
+858540 MySQL tpm
+818520 MySQL tpm
+Vuser 1:Rampup 2 minutes complete ...
+Vuser 1:Rampup complete, Taking start Transaction Count.
+Vuser 1:Timing test period of 8 in minutes
+875580 MySQL tpm
+722880 MySQL tpm
+850500 MySQL tpm
+840780 MySQL tpm
+843600 MySQL tpm
+806580 MySQL tpm
+886920 MySQL tpm
+883380 MySQL tpm
+874200 MySQL tpm
+849120 MySQL tpm
+723000 MySQL tpm
+825300 MySQL tpm
+669900 MySQL tpm
+747420 MySQL tpm
+758940 MySQL tpm
+796380 MySQL tpm
+756000 MySQL tpm
+845340 MySQL tpm
+890100 MySQL tpm
+835980 MySQL tpm
+930180 MySQL tpm
+932520 MySQL tpm
+910020 MySQL tpm
+925500 MySQL tpm
+914820 MySQL tpm
+897780 MySQL tpm
+889500 MySQL tpm
+904560 MySQL tpm
+902820 MySQL tpm
+939360 MySQL tpm
+952680 MySQL tpm
+938760 MySQL tpm
+943320 MySQL tpm
+956520 MySQL tpm
+943800 MySQL tpm
+944280 MySQL tpm
+954180 MySQL tpm
+938220 MySQL tpm
+959160 MySQL tpm
+938220 MySQL tpm
+950280 MySQL tpm
+950520 MySQL tpm
+944880 MySQL tpm
+956520 MySQL tpm
+950700 MySQL tpm
+957660 MySQL tpm
+963540 MySQL tpm
+962700 MySQL tpm
+966780 MySQL tpm
+959040 MySQL tpm
+950520 MySQL tpm
+954720 MySQL tpm
+937560 MySQL tpm
+942780 MySQL tpm
+951420 MySQL tpm
+956700 MySQL tpm
+960660 MySQL tpm
+951780 MySQL tpm
+954240 MySQL tpm
+961260 MySQL tpm
+Vuser 1:1 ...,
+952140 MySQL tpm
+962160 MySQL tpm
+961980 MySQL tpm
+958440 MySQL tpm
+958140 MySQL tpm
+967620 MySQL tpm
+957780 MySQL tpm
+964740 MySQL tpm
+973500 MySQL tpm
+965820 MySQL tpm
+951600 MySQL tpm
+964740 MySQL tpm
+971820 MySQL tpm
+938940 MySQL tpm
+967620 MySQL tpm
+970620 MySQL tpm
+970380 MySQL tpm
+948000 MySQL tpm
+960720 MySQL tpm
+893880 MySQL tpm
+942540 MySQL tpm
+951300 MySQL tpm
+955860 MySQL tpm
+917340 MySQL tpm
+942300 MySQL tpm
+928200 MySQL tpm
+920220 MySQL tpm
+894360 MySQL tpm
+880800 MySQL tpm
+909480 MySQL tpm
+854700 MySQL tpm
+884040 MySQL tpm
+786000 MySQL tpm
+916980 MySQL tpm
+745860 MySQL tpm
+910440 MySQL tpm
+911340 MySQL tpm
+888120 MySQL tpm
+931800 MySQL tpm
+901080 MySQL tpm
+793440 MySQL tpm
+893640 MySQL tpm
+873120 MySQL tpm
+854400 MySQL tpm
+876900 MySQL tpm
+885840 MySQL tpm
+824820 MySQL tpm
+897060 MySQL tpm
+920280 MySQL tpm
+893040 MySQL tpm
+928200 MySQL tpm
+894900 MySQL tpm
+784860 MySQL tpm
+809880 MySQL tpm
+813060 MySQL tpm
+888060 MySQL tpm
+878160 MySQL tpm
+895800 MySQL tpm
+790740 MySQL tpm
+898860 MySQL tpm
+Vuser 1:2 ...,
+808320 MySQL tpm
+895200 MySQL tpm
+876480 MySQL tpm
+875400 MySQL tpm
+888000 MySQL tpm
+885060 MySQL tpm
+867360 MySQL tpm
+843840 MySQL tpm
+855420 MySQL tpm
+838560 MySQL tpm
+794880 MySQL tpm
+897000 MySQL tpm
+930300 MySQL tpm
+953340 MySQL tpm
+944220 MySQL tpm
+963540 MySQL tpm
+965280 MySQL tpm
+968280 MySQL tpm
+964320 MySQL tpm
+966300 MySQL tpm
+979140 MySQL tpm
+971820 MySQL tpm
+954780 MySQL tpm
+970620 MySQL tpm
+970020 MySQL tpm
+985680 MySQL tpm
+983880 MySQL tpm
+969060 MySQL tpm
+966420 MySQL tpm
+966660 MySQL tpm
+963660 MySQL tpm
+971160 MySQL tpm
+974160 MySQL tpm
+982680 MySQL tpm
+983160 MySQL tpm
+973020 MySQL tpm
+924660 MySQL tpm
+964620 MySQL tpm
+969840 MySQL tpm
+968220 MySQL tpm
+950220 MySQL tpm
+904200 MySQL tpm
+929580 MySQL tpm
+927420 MySQL tpm
+979680 MySQL tpm
+961800 MySQL tpm
+946500 MySQL tpm
+953280 MySQL tpm
+969480 MySQL tpm
+962940 MySQL tpm
+885480 MySQL tpm
+969420 MySQL tpm
+909720 MySQL tpm
+848340 MySQL tpm
+873120 MySQL tpm
+874800 MySQL tpm
+943200 MySQL tpm
+858600 MySQL tpm
+870300 MySQL tpm
+898800 MySQL tpm
+Vuser 1:3 ...,
+886320 MySQL tpm
+885060 MySQL tpm
+865080 MySQL tpm
+877200 MySQL tpm
+916380 MySQL tpm
+907440 MySQL tpm
+812580 MySQL tpm
+854820 MySQL tpm
+866700 MySQL tpm
+863220 MySQL tpm
+854580 MySQL tpm
+863700 MySQL tpm
+862680 MySQL tpm
+889380 MySQL tpm
+864900 MySQL tpm
+846480 MySQL tpm
+885720 MySQL tpm
+846900 MySQL tpm
+800220 MySQL tpm
+833820 MySQL tpm
+847560 MySQL tpm
+870840 MySQL tpm
+846660 MySQL tpm
+863220 MySQL tpm
+848340 MySQL tpm
+833580 MySQL tpm
+841560 MySQL tpm
+839160 MySQL tpm
+863640 MySQL tpm
+840900 MySQL tpm
+873060 MySQL tpm
+871200 MySQL tpm
+883920 MySQL tpm
+902340 MySQL tpm
+877440 MySQL tpm
+930960 MySQL tpm
+935100 MySQL tpm
+948780 MySQL tpm
+966540 MySQL tpm
+975000 MySQL tpm
+954120 MySQL tpm
+968220 MySQL tpm
+992280 MySQL tpm
+984900 MySQL tpm
+1000440 MySQL tpm
+978420 MySQL tpm
+974520 MySQL tpm
+979920 MySQL tpm
+966480 MySQL tpm
+967080 MySQL tpm
+979560 MySQL tpm
+989940 MySQL tpm
+963600 MySQL tpm
+957600 MySQL tpm
+947880 MySQL tpm
+964980 MySQL tpm
+965460 MySQL tpm
+986880 MySQL tpm
+951900 MySQL tpm
+944100 MySQL tpm
+Vuser 1:4 ...,
+957420 MySQL tpm
+953220 MySQL tpm
+957180 MySQL tpm
+970260 MySQL tpm
+983760 MySQL tpm
+981420 MySQL tpm
+978660 MySQL tpm
+922620 MySQL tpm
+984180 MySQL tpm
+972240 MySQL tpm
+992580 MySQL tpm
+980100 MySQL tpm
+981240 MySQL tpm
+978420 MySQL tpm
+966840 MySQL tpm
+984900 MySQL tpm
+968940 MySQL tpm
+976380 MySQL tpm
+977880 MySQL tpm
+988800 MySQL tpm
+974640 MySQL tpm
+944040 MySQL tpm
+967260 MySQL tpm
+978840 MySQL tpm
+995700 MySQL tpm
+985260 MySQL tpm
+973380 MySQL tpm
+971100 MySQL tpm
+984060 MySQL tpm
+971820 MySQL tpm
+956700 MySQL tpm
+981840 MySQL tpm
+983280 MySQL tpm
+990360 MySQL tpm
+970200 MySQL tpm
+948180 MySQL tpm
+968400 MySQL tpm
+990840 MySQL tpm
+985500 MySQL tpm
+982320 MySQL tpm
+969660 MySQL tpm
+988440 MySQL tpm
+977280 MySQL tpm
+966180 MySQL tpm
+935100 MySQL tpm
+963600 MySQL tpm
+962700 MySQL tpm
+949440 MySQL tpm
+932160 MySQL tpm
+919860 MySQL tpm
+883140 MySQL tpm
+915660 MySQL tpm
+907140 MySQL tpm
+918660 MySQL tpm
+933840 MySQL tpm
+923220 MySQL tpm
+919440 MySQL tpm
+906180 MySQL tpm
+895860 MySQL tpm
+930300 MySQL tpm
+Vuser 1:5 ...,
+888060 MySQL tpm
+882900 MySQL tpm
+899100 MySQL tpm
+889020 MySQL tpm
+871620 MySQL tpm
+878280 MySQL tpm
+895200 MySQL tpm
+901740 MySQL tpm
+881340 MySQL tpm
+904680 MySQL tpm
+858660 MySQL tpm
+843000 MySQL tpm
+952680 MySQL tpm
+888540 MySQL tpm
+956100 MySQL tpm
+963060 MySQL tpm
+976620 MySQL tpm
+963720 MySQL tpm
+973560 MySQL tpm
+979740 MySQL tpm
+970320 MySQL tpm
+985740 MySQL tpm
+977220 MySQL tpm
+975360 MySQL tpm
+987840 MySQL tpm
+976920 MySQL tpm
+975720 MySQL tpm
+977520 MySQL tpm
+974940 MySQL tpm
+972000 MySQL tpm
+986700 MySQL tpm
+966960 MySQL tpm
+983760 MySQL tpm
+968220 MySQL tpm
+982140 MySQL tpm
+982080 MySQL tpm
+970320 MySQL tpm
+979680 MySQL tpm
+967260 MySQL tpm
+980580 MySQL tpm
+967740 MySQL tpm
+977700 MySQL tpm
+977280 MySQL tpm
+973740 MySQL tpm
+973140 MySQL tpm
+972600 MySQL tpm
+994380 MySQL tpm
+978300 MySQL tpm
+971340 MySQL tpm
+982740 MySQL tpm
+986220 MySQL tpm
+974220 MySQL tpm
+987480 MySQL tpm
+967980 MySQL tpm
+975000 MySQL tpm
+931980 MySQL tpm
+967920 MySQL tpm
+973980 MySQL tpm
+978900 MySQL tpm
+984060 MySQL tpm
+Vuser 1:6 ...,
+981120 MySQL tpm
+994920 MySQL tpm
+926400 MySQL tpm
+969540 MySQL tpm
+964260 MySQL tpm
+981900 MySQL tpm
+938580 MySQL tpm
+958680 MySQL tpm
+958320 MySQL tpm
+970560 MySQL tpm
+956880 MySQL tpm
+957420 MySQL tpm
+952800 MySQL tpm
+961320 MySQL tpm
+970800 MySQL tpm
+948360 MySQL tpm
+941460 MySQL tpm
+917640 MySQL tpm
+967200 MySQL tpm
+976740 MySQL tpm
+900840 MySQL tpm
+922320 MySQL tpm
+866700 MySQL tpm
+919860 MySQL tpm
+897120 MySQL tpm
+845100 MySQL tpm
+870780 MySQL tpm
+876540 MySQL tpm
+873420 MySQL tpm
+891780 MySQL tpm
+903420 MySQL tpm
+890160 MySQL tpm
+884040 MySQL tpm
+930300 MySQL tpm
+858600 MySQL tpm
+886380 MySQL tpm
+897720 MySQL tpm
+899400 MySQL tpm
+873300 MySQL tpm
+868140 MySQL tpm
+857580 MySQL tpm
+880260 MySQL tpm
+862200 MySQL tpm
+830640 MySQL tpm
+836040 MySQL tpm
+846600 MySQL tpm
+877440 MySQL tpm
+816000 MySQL tpm
+817560 MySQL tpm
+915240 MySQL tpm
+892920 MySQL tpm
+890760 MySQL tpm
+854220 MySQL tpm
+846480 MySQL tpm
+862740 MySQL tpm
+866040 MySQL tpm
+837120 MySQL tpm
+851580 MySQL tpm
+840000 MySQL tpm
+942720 MySQL tpm
+Vuser 1:7 ...,
+969420 MySQL tpm
+975660 MySQL tpm
+951240 MySQL tpm
+974280 MySQL tpm
+975720 MySQL tpm
+970500 MySQL tpm
+975300 MySQL tpm
+974220 MySQL tpm
+973740 MySQL tpm
+975120 MySQL tpm
+963780 MySQL tpm
+975180 MySQL tpm
+985920 MySQL tpm
+978180 MySQL tpm
+982740 MySQL tpm
+974820 MySQL tpm
+984600 MySQL tpm
+974160 MySQL tpm
+974040 MySQL tpm
+980580 MySQL tpm
+982140 MySQL tpm
+981780 MySQL tpm
+978240 MySQL tpm
+981780 MySQL tpm
+956280 MySQL tpm
+951000 MySQL tpm
+961620 MySQL tpm
+954180 MySQL tpm
+971700 MySQL tpm
+958620 MySQL tpm
+936780 MySQL tpm
+929760 MySQL tpm
+911760 MySQL tpm
+972540 MySQL tpm
+965280 MySQL tpm
+985020 MySQL tpm
+982020 MySQL tpm
+981720 MySQL tpm
+972720 MySQL tpm
+957420 MySQL tpm
+926880 MySQL tpm
+988920 MySQL tpm
+988320 MySQL tpm
+980940 MySQL tpm
+980580 MySQL tpm
+981000 MySQL tpm
+982860 MySQL tpm
+981000 MySQL tpm
+975360 MySQL tpm
+984840 MySQL tpm
+989520 MySQL tpm
+983580 MySQL tpm
+998100 MySQL tpm
+965940 MySQL tpm
+974460 MySQL tpm
+952920 MySQL tpm
+994680 MySQL tpm
+988620 MySQL tpm
+991140 MySQL tpm
+Vuser 1:8 ...,
+Vuser 1:Test complete, Taking end Transaction Count.
+Vuser 1:80 Active Virtual Users configured
+Vuser 1:TEST RESULT : System achieved 399170 NOPM from 927789 MySQL TPM
+Vuser 1:FINISHED SUCCESS
+986520 MySQL tpm
+Vuser 80:FINISHED SUCCESS
+Vuser 3:FINISHED SUCCESS
+Vuser 75:FINISHED SUCCESS
+Vuser 25:FINISHED SUCCESS
+Vuser 79:FINISHED SUCCESS
+Vuser 28:FINISHED SUCCESS
+Vuser 60:FINISHED SUCCESS
+Vuser 12:FINISHED SUCCESS
+Vuser 2:FINISHED SUCCESS
+Vuser 69:FINISHED SUCCESS
+Vuser 10:FINISHED SUCCESS
+Vuser 53:FINISHED SUCCESS
+Vuser 72:FINISHED SUCCESS
+Vuser 54:FINISHED SUCCESS
+Vuser 58:FINISHED SUCCESS
+Vuser 65:FINISHED SUCCESS
+Vuser 49:FINISHED SUCCESS
+Vuser 62:FINISHED SUCCESS
+Vuser 17:FINISHED SUCCESS
+Vuser 37:FINISHED SUCCESS
+Vuser 77:FINISHED SUCCESS
+Vuser 71:FINISHED SUCCESS
+Vuser 70:FINISHED SUCCESS
+Vuser 43:FINISHED SUCCESS
+Vuser 42:FINISHED SUCCESS
+Vuser 22:FINISHED SUCCESS
+Vuser 9:FINISHED SUCCESS
+Vuser 5:FINISHED SUCCESS
+Vuser 7:FINISHED SUCCESS
+Vuser 20:FINISHED SUCCESS
+Vuser 47:FINISHED SUCCESS
+Vuser 11:FINISHED SUCCESS
+Vuser 13:FINISHED SUCCESS
+Vuser 66:FINISHED SUCCESS
+Vuser 73:FINISHED SUCCESS
+Vuser 44:FINISHED SUCCESS
+Vuser 21:FINISHED SUCCESS
+Vuser 48:FINISHED SUCCESS
+Vuser 45:FINISHED SUCCESS
+Vuser 59:FINISHED SUCCESS
+Vuser 34:FINISHED SUCCESS
+Vuser 64:FINISHED SUCCESS
+Vuser 15:FINISHED SUCCESS
+Vuser 39:FINISHED SUCCESS
+Vuser 51:FINISHED SUCCESS
+Vuser 40:FINISHED SUCCESS
+Vuser 63:FINISHED SUCCESS
+730020 MySQL tpm
+Vuser 24:FINISHED SUCCESS
+Vuser 57:FINISHED SUCCESS
+Vuser 46:FINISHED SUCCESS
+Vuser 23:FINISHED SUCCESS
+Vuser 55:FINISHED SUCCESS
+Vuser 74:FINISHED SUCCESS
+Vuser 33:FINISHED SUCCESS
+Vuser 38:FINISHED SUCCESS
+Vuser 52:FINISHED SUCCESS
+Vuser 36:FINISHED SUCCESS
+Vuser 18:FINISHED SUCCESS
+Vuser 30:FINISHED SUCCESS
+554460 MySQL tpm
+Vuser 81:FINISHED SUCCESS
+Vuser 32:FINISHED SUCCESS
+Vuser 76:FINISHED SUCCESS
+Vuser 4:FINISHED SUCCESS
+Vuser 26:FINISHED SUCCESS
+Vuser 35:FINISHED SUCCESS
+Vuser 68:FINISHED SUCCESS
+Vuser 31:FINISHED SUCCESS
+Vuser 14:FINISHED SUCCESS
+Vuser 56:FINISHED SUCCESS
+Vuser 16:FINISHED SUCCESS
+Vuser 67:FINISHED SUCCESS
+Vuser 19:FINISHED SUCCESS
+Vuser 8:FINISHED SUCCESS
+Vuser 41:FINISHED SUCCESS
+Vuser 29:FINISHED SUCCESS
+Vuser 50:FINISHED SUCCESS
+Vuser 78:FINISHED SUCCESS
+Vuser 27:FINISHED SUCCESS
+Vuser 6:FINISHED SUCCESS
+268920 MySQL tpm
+Vuser 61:FINISHED SUCCESS
+ALL VIRTUAL USERS COMPLETE
+1260 MySQL tpm
+vudestroy success
+Transaction Counter thread running with threadid:tid0x7f0e7d7fa6c0
+Stopping Transaction Counter
+Closed Transaction Counter Log
+TEST COMPLETE jobid=69F232FBEA7303E263834303
+{"69F232FBEA7303E263834303": {
+    "Jobid": "has",
+    "no": "timing",
+    "data": ""
+  }}
+
+{"MySQL tpm": {
+    "2026-04-29 16:34:03": "0",
+    "2026-04-29 16:34:04": "2760",
+    "2026-04-29 16:34:05": "17880",
+    "2026-04-29 16:34:06": "30900",
+    "2026-04-29 16:34:07": "50040",
+    "2026-04-29 16:34:08": "65700",
+    "2026-04-29 16:34:09": "90960",
+    "2026-04-29 16:34:10": "109140",
+    "2026-04-29 16:34:11": "136980",
+    "2026-04-29 16:34:12": "158880",
+    "2026-04-29 16:34:13": "172740",
+    "2026-04-29 16:34:14": "189780",
+    "2026-04-29 16:34:15": "223080",
+    "2026-04-29 16:34:16": "253080",
+    "2026-04-29 16:34:17": "288480",
+    "2026-04-29 16:34:18": "319440",
+    "2026-04-29 16:34:19": "336900",
+    "2026-04-29 16:34:20": "360120",
+    "2026-04-29 16:34:21": "385920",
+    "2026-04-29 16:34:22": "385260",
+    "2026-04-29 16:34:23": "409860",
+    "2026-04-29 16:34:24": "428580",
+    "2026-04-29 16:34:25": "476640",
+    "2026-04-29 16:34:26": "495600",
+    "2026-04-29 16:34:27": "524640",
+    "2026-04-29 16:34:28": "542040",
+    "2026-04-29 16:34:29": "572760",
+    "2026-04-29 16:34:30": "594480",
+    "2026-04-29 16:34:31": "612660",
+    "2026-04-29 16:34:32": "641160",
+    "2026-04-29 16:34:33": "649020",
+    "2026-04-29 16:34:34": "688200",
+    "2026-04-29 16:34:35": "702420",
+    "2026-04-29 16:34:36": "720840",
+    "2026-04-29 16:34:37": "738420",
+    "2026-04-29 16:34:38": "757200",
+    "2026-04-29 16:34:39": "782160",
+    "2026-04-29 16:34:40": "799860",
+    "2026-04-29 16:34:41": "797640",
+    "2026-04-29 16:34:42": "806820",
+    "2026-04-29 16:34:43": "819900",
+    "2026-04-29 16:34:44": "826080",
+    "2026-04-29 16:34:45": "841020",
+    "2026-04-29 16:34:46": "854940",
+    "2026-04-29 16:34:47": "858600",
+    "2026-04-29 16:34:48": "872400",
+    "2026-04-29 16:34:49": "881820",
+    "2026-04-29 16:34:50": "892020",
+    "2026-04-29 16:34:51": "890940",
+    "2026-04-29 16:34:52": "859140",
+    "2026-04-29 16:34:53": "875640",
+    "2026-04-29 16:34:54": "874440",
+    "2026-04-29 16:34:55": "870840",
+    "2026-04-29 16:34:56": "863100",
+    "2026-04-29 16:34:57": "873420",
+    "2026-04-29 16:34:58": "881280",
+    "2026-04-29 16:34:59": "874980",
+    "2026-04-29 16:35:00": "880740",
+    "2026-04-29 16:35:01": "886560",
+    "2026-04-29 16:35:02": "885300",
+    "2026-04-29 16:35:03": "895920",
+    "2026-04-29 16:35:04": "897180",
+    "2026-04-29 16:35:05": "897000",
+    "2026-04-29 16:35:06": "921300",
+    "2026-04-29 16:35:07": "897180",
+    "2026-04-29 16:35:08": "880800",
+    "2026-04-29 16:35:09": "897060",
+    "2026-04-29 16:35:10": "907200",
+    "2026-04-29 16:35:11": "907920",
+    "2026-04-29 16:35:12": "895380",
+    "2026-04-29 16:35:14": "880380",
+    "2026-04-29 16:35:15": "834060",
+    "2026-04-29 16:35:16": "853920",
+    "2026-04-29 16:35:17": "868260",
+    "2026-04-29 16:35:18": "873540",
+    "2026-04-29 16:35:19": "908880",
+    "2026-04-29 16:35:20": "924840",
+    "2026-04-29 16:35:21": "937020",
+    "2026-04-29 16:35:22": "937620",
+    "2026-04-29 16:35:23": "925200",
+    "2026-04-29 16:35:24": "903480",
+    "2026-04-29 16:35:25": "911700",
+    "2026-04-29 16:35:26": "875580",
+    "2026-04-29 16:35:27": "890640",
+    "2026-04-29 16:35:28": "903600",
+    "2026-04-29 16:35:29": "913380",
+    "2026-04-29 16:35:30": "905100",
+    "2026-04-29 16:35:31": "886380",
+    "2026-04-29 16:35:32": "904200",
+    "2026-04-29 16:35:33": "851040",
+    "2026-04-29 16:35:34": "853560",
+    "2026-04-29 16:35:35": "816840",
+    "2026-04-29 16:35:36": "863400",
+    "2026-04-29 16:35:37": "841620",
+    "2026-04-29 16:35:38": "868080",
+    "2026-04-29 16:35:39": "841320",
+    "2026-04-29 16:35:40": "858600",
+    "2026-04-29 16:35:41": "793860",
+    "2026-04-29 16:35:42": "797760",
+    "2026-04-29 16:35:43": "824700",
+    "2026-04-29 16:35:44": "765960",
+    "2026-04-29 16:35:45": "837720",
+    "2026-04-29 16:35:46": "736920",
+    "2026-04-29 16:35:47": "839400",
+    "2026-04-29 16:35:48": "870420",
+    "2026-04-29 16:35:49": "873060",
+    "2026-04-29 16:35:50": "898380",
+    "2026-04-29 16:35:51": "881340",
+    "2026-04-29 16:35:52": "915840",
+    "2026-04-29 16:35:53": "882660",
+    "2026-04-29 16:35:54": "899160",
+    "2026-04-29 16:35:55": "893820",
+    "2026-04-29 16:35:56": "893100",
+    "2026-04-29 16:35:57": "890040",
+    "2026-04-29 16:35:58": "897300",
+    "2026-04-29 16:35:59": "873300",
+    "2026-04-29 16:36:00": "884280",
+    "2026-04-29 16:36:01": "878580",
+    "2026-04-29 16:36:02": "858540",
+    "2026-04-29 16:36:03": "818520",
+    "2026-04-29 16:36:04": "875580",
+    "2026-04-29 16:36:05": "722880",
+    "2026-04-29 16:36:06": "850500",
+    "2026-04-29 16:36:07": "840780",
+    "2026-04-29 16:36:08": "843600",
+    "2026-04-29 16:36:09": "806580",
+    "2026-04-29 16:36:10": "886920",
+    "2026-04-29 16:36:11": "883380",
+    "2026-04-29 16:36:12": "874200",
+    "2026-04-29 16:36:13": "849120",
+    "2026-04-29 16:36:14": "723000",
+    "2026-04-29 16:36:15": "825300",
+    "2026-04-29 16:36:16": "669900",
+    "2026-04-29 16:36:17": "747420",
+    "2026-04-29 16:36:18": "758940",
+    "2026-04-29 16:36:19": "796380",
+    "2026-04-29 16:36:20": "756000",
+    "2026-04-29 16:36:21": "845340",
+    "2026-04-29 16:36:22": "890100",
+    "2026-04-29 16:36:23": "835980",
+    "2026-04-29 16:36:24": "930180",
+    "2026-04-29 16:36:25": "932520",
+    "2026-04-29 16:36:26": "910020",
+    "2026-04-29 16:36:27": "925500",
+    "2026-04-29 16:36:28": "914820",
+    "2026-04-29 16:36:29": "897780",
+    "2026-04-29 16:36:30": "889500",
+    "2026-04-29 16:36:31": "904560",
+    "2026-04-29 16:36:32": "902820",
+    "2026-04-29 16:36:33": "939360",
+    "2026-04-29 16:36:34": "952680",
+    "2026-04-29 16:36:35": "938760",
+    "2026-04-29 16:36:36": "943320",
+    "2026-04-29 16:36:37": "956520",
+    "2026-04-29 16:36:38": "943800",
+    "2026-04-29 16:36:39": "944280",
+    "2026-04-29 16:36:40": "954180",
+    "2026-04-29 16:36:41": "938220",
+    "2026-04-29 16:36:42": "959160",
+    "2026-04-29 16:36:43": "938220",
+    "2026-04-29 16:36:44": "950280",
+    "2026-04-29 16:36:45": "950520",
+    "2026-04-29 16:36:46": "944880",
+    "2026-04-29 16:36:47": "956520",
+    "2026-04-29 16:36:48": "950700",
+    "2026-04-29 16:36:49": "957660",
+    "2026-04-29 16:36:50": "963540",
+    "2026-04-29 16:36:51": "962700",
+    "2026-04-29 16:36:52": "966780",
+    "2026-04-29 16:36:53": "959040",
+    "2026-04-29 16:36:54": "950520",
+    "2026-04-29 16:36:55": "954720",
+    "2026-04-29 16:36:56": "937560",
+    "2026-04-29 16:36:57": "942780",
+    "2026-04-29 16:36:58": "951420",
+    "2026-04-29 16:36:59": "956700",
+    "2026-04-29 16:37:00": "960660",
+    "2026-04-29 16:37:01": "951780",
+    "2026-04-29 16:37:02": "954240",
+    "2026-04-29 16:37:03": "961260",
+    "2026-04-29 16:37:04": "952140",
+    "2026-04-29 16:37:05": "962160",
+    "2026-04-29 16:37:06": "961980",
+    "2026-04-29 16:37:07": "958440",
+    "2026-04-29 16:37:08": "958140",
+    "2026-04-29 16:37:09": "967620",
+    "2026-04-29 16:37:10": "957780",
+    "2026-04-29 16:37:11": "964740",
+    "2026-04-29 16:37:12": "973500",
+    "2026-04-29 16:37:13": "965820",
+    "2026-04-29 16:37:14": "951600",
+    "2026-04-29 16:37:15": "964740",
+    "2026-04-29 16:37:16": "971820",
+    "2026-04-29 16:37:17": "938940",
+    "2026-04-29 16:37:18": "967620",
+    "2026-04-29 16:37:19": "970620",
+    "2026-04-29 16:37:20": "970380",
+    "2026-04-29 16:37:21": "948000",
+    "2026-04-29 16:37:22": "960720",
+    "2026-04-29 16:37:23": "893880",
+    "2026-04-29 16:37:24": "942540",
+    "2026-04-29 16:37:25": "951300",
+    "2026-04-29 16:37:26": "955860",
+    "2026-04-29 16:37:27": "917340",
+    "2026-04-29 16:37:28": "942300",
+    "2026-04-29 16:37:29": "928200",
+    "2026-04-29 16:37:30": "920220",
+    "2026-04-29 16:37:31": "894360",
+    "2026-04-29 16:37:32": "880800",
+    "2026-04-29 16:37:33": "909480",
+    "2026-04-29 16:37:34": "854700",
+    "2026-04-29 16:37:35": "884040",
+    "2026-04-29 16:37:36": "786000",
+    "2026-04-29 16:37:37": "916980",
+    "2026-04-29 16:37:38": "745860",
+    "2026-04-29 16:37:39": "910440",
+    "2026-04-29 16:37:40": "911340",
+    "2026-04-29 16:37:41": "888120",
+    "2026-04-29 16:37:42": "931800",
+    "2026-04-29 16:37:43": "901080",
+    "2026-04-29 16:37:44": "793440",
+    "2026-04-29 16:37:45": "893640",
+    "2026-04-29 16:37:46": "873120",
+    "2026-04-29 16:37:47": "854400",
+    "2026-04-29 16:37:48": "876900",
+    "2026-04-29 16:37:49": "885840",
+    "2026-04-29 16:37:50": "824820",
+    "2026-04-29 16:37:51": "897060",
+    "2026-04-29 16:37:52": "920280",
+    "2026-04-29 16:37:53": "893040",
+    "2026-04-29 16:37:54": "928200",
+    "2026-04-29 16:37:55": "894900",
+    "2026-04-29 16:37:56": "784860",
+    "2026-04-29 16:37:57": "809880",
+    "2026-04-29 16:37:58": "813060",
+    "2026-04-29 16:37:59": "888060",
+    "2026-04-29 16:38:00": "878160",
+    "2026-04-29 16:38:01": "895800",
+    "2026-04-29 16:38:02": "790740",
+    "2026-04-29 16:38:03": "898860",
+    "2026-04-29 16:38:04": "808320",
+    "2026-04-29 16:38:05": "895200",
+    "2026-04-29 16:38:06": "876480",
+    "2026-04-29 16:38:07": "875400",
+    "2026-04-29 16:38:08": "888000",
+    "2026-04-29 16:38:09": "885060",
+    "2026-04-29 16:38:10": "867360",
+    "2026-04-29 16:38:11": "843840",
+    "2026-04-29 16:38:12": "855420",
+    "2026-04-29 16:38:13": "838560",
+    "2026-04-29 16:38:14": "794880",
+    "2026-04-29 16:38:15": "897000",
+    "2026-04-29 16:38:16": "930300",
+    "2026-04-29 16:38:17": "953340",
+    "2026-04-29 16:38:18": "944220",
+    "2026-04-29 16:38:19": "963540",
+    "2026-04-29 16:38:20": "965280",
+    "2026-04-29 16:38:21": "968280",
+    "2026-04-29 16:38:22": "964320",
+    "2026-04-29 16:38:23": "966300",
+    "2026-04-29 16:38:24": "979140",
+    "2026-04-29 16:38:25": "971820",
+    "2026-04-29 16:38:26": "954780",
+    "2026-04-29 16:38:27": "970620",
+    "2026-04-29 16:38:28": "970020",
+    "2026-04-29 16:38:29": "985680",
+    "2026-04-29 16:38:30": "983880",
+    "2026-04-29 16:38:31": "969060",
+    "2026-04-29 16:38:32": "966420",
+    "2026-04-29 16:38:33": "966660",
+    "2026-04-29 16:38:34": "963660",
+    "2026-04-29 16:38:35": "971160",
+    "2026-04-29 16:38:36": "974160",
+    "2026-04-29 16:38:37": "982680",
+    "2026-04-29 16:38:38": "983160",
+    "2026-04-29 16:38:39": "973020",
+    "2026-04-29 16:38:40": "924660",
+    "2026-04-29 16:38:41": "964620",
+    "2026-04-29 16:38:42": "969840",
+    "2026-04-29 16:38:43": "968220",
+    "2026-04-29 16:38:44": "950220",
+    "2026-04-29 16:38:45": "904200",
+    "2026-04-29 16:38:46": "929580",
+    "2026-04-29 16:38:47": "927420",
+    "2026-04-29 16:38:48": "979680",
+    "2026-04-29 16:38:49": "961800",
+    "2026-04-29 16:38:50": "946500",
+    "2026-04-29 16:38:51": "953280",
+    "2026-04-29 16:38:52": "969480",
+    "2026-04-29 16:38:53": "962940",
+    "2026-04-29 16:38:54": "885480",
+    "2026-04-29 16:38:55": "969420",
+    "2026-04-29 16:38:56": "909720",
+    "2026-04-29 16:38:57": "848340",
+    "2026-04-29 16:38:58": "873120",
+    "2026-04-29 16:38:59": "874800",
+    "2026-04-29 16:39:00": "943200",
+    "2026-04-29 16:39:01": "858600",
+    "2026-04-29 16:39:02": "870300",
+    "2026-04-29 16:39:03": "898800",
+    "2026-04-29 16:39:04": "886320",
+    "2026-04-29 16:39:05": "885060",
+    "2026-04-29 16:39:06": "865080",
+    "2026-04-29 16:39:07": "877200",
+    "2026-04-29 16:39:08": "916380",
+    "2026-04-29 16:39:09": "907440",
+    "2026-04-29 16:39:10": "812580",
+    "2026-04-29 16:39:11": "854820",
+    "2026-04-29 16:39:12": "866700",
+    "2026-04-29 16:39:13": "863220",
+    "2026-04-29 16:39:14": "854580",
+    "2026-04-29 16:39:15": "863700",
+    "2026-04-29 16:39:16": "862680",
+    "2026-04-29 16:39:17": "889380",
+    "2026-04-29 16:39:18": "864900",
+    "2026-04-29 16:39:19": "846480",
+    "2026-04-29 16:39:20": "885720",
+    "2026-04-29 16:39:21": "846900",
+    "2026-04-29 16:39:22": "800220",
+    "2026-04-29 16:39:23": "833820",
+    "2026-04-29 16:39:24": "847560",
+    "2026-04-29 16:39:25": "870840",
+    "2026-04-29 16:39:26": "846660",
+    "2026-04-29 16:39:27": "863220",
+    "2026-04-29 16:39:28": "848340",
+    "2026-04-29 16:39:29": "833580",
+    "2026-04-29 16:39:30": "841560",
+    "2026-04-29 16:39:31": "839160",
+    "2026-04-29 16:39:32": "863640",
+    "2026-04-29 16:39:33": "840900",
+    "2026-04-29 16:39:34": "873060",
+    "2026-04-29 16:39:35": "871200",
+    "2026-04-29 16:39:36": "883920",
+    "2026-04-29 16:39:37": "902340",
+    "2026-04-29 16:39:38": "877440",
+    "2026-04-29 16:39:39": "930960",
+    "2026-04-29 16:39:40": "935100",
+    "2026-04-29 16:39:41": "948780",
+    "2026-04-29 16:39:42": "966540",
+    "2026-04-29 16:39:43": "975000",
+    "2026-04-29 16:39:44": "954120",
+    "2026-04-29 16:39:45": "968220",
+    "2026-04-29 16:39:46": "992280",
+    "2026-04-29 16:39:47": "984900",
+    "2026-04-29 16:39:48": "1000440",
+    "2026-04-29 16:39:49": "978420",
+    "2026-04-29 16:39:50": "974520",
+    "2026-04-29 16:39:51": "979920",
+    "2026-04-29 16:39:52": "966480",
+    "2026-04-29 16:39:53": "967080",
+    "2026-04-29 16:39:54": "979560",
+    "2026-04-29 16:39:55": "989940",
+    "2026-04-29 16:39:56": "963600",
+    "2026-04-29 16:39:57": "957600",
+    "2026-04-29 16:39:58": "947880",
+    "2026-04-29 16:39:59": "964980",
+    "2026-04-29 16:40:00": "965460",
+    "2026-04-29 16:40:01": "986880",
+    "2026-04-29 16:40:02": "951900",
+    "2026-04-29 16:40:03": "944100",
+    "2026-04-29 16:40:04": "957420",
+    "2026-04-29 16:40:05": "953220",
+    "2026-04-29 16:40:06": "957180",
+    "2026-04-29 16:40:07": "970260",
+    "2026-04-29 16:40:08": "983760",
+    "2026-04-29 16:40:09": "981420",
+    "2026-04-29 16:40:10": "978660",
+    "2026-04-29 16:40:11": "922620",
+    "2026-04-29 16:40:12": "984180",
+    "2026-04-29 16:40:13": "972240",
+    "2026-04-29 16:40:14": "992580",
+    "2026-04-29 16:40:15": "980100",
+    "2026-04-29 16:40:16": "981240",
+    "2026-04-29 16:40:17": "978420",
+    "2026-04-29 16:40:18": "966840",
+    "2026-04-29 16:40:19": "984900",
+    "2026-04-29 16:40:20": "968940",
+    "2026-04-29 16:40:21": "976380",
+    "2026-04-29 16:40:22": "977880",
+    "2026-04-29 16:40:23": "988800",
+    "2026-04-29 16:40:24": "974640",
+    "2026-04-29 16:40:25": "944040",
+    "2026-04-29 16:40:26": "967260",
+    "2026-04-29 16:40:27": "978840",
+    "2026-04-29 16:40:28": "995700",
+    "2026-04-29 16:40:29": "985260",
+    "2026-04-29 16:40:30": "973380",
+    "2026-04-29 16:40:31": "971100",
+    "2026-04-29 16:40:32": "984060",
+    "2026-04-29 16:40:33": "971820",
+    "2026-04-29 16:40:34": "956700",
+    "2026-04-29 16:40:35": "981840",
+    "2026-04-29 16:40:36": "983280",
+    "2026-04-29 16:40:37": "990360",
+    "2026-04-29 16:40:38": "970200",
+    "2026-04-29 16:40:39": "948180",
+    "2026-04-29 16:40:40": "968400",
+    "2026-04-29 16:40:41": "990840",
+    "2026-04-29 16:40:42": "985500",
+    "2026-04-29 16:40:43": "982320",
+    "2026-04-29 16:40:44": "969660",
+    "2026-04-29 16:40:45": "988440",
+    "2026-04-29 16:40:46": "977280",
+    "2026-04-29 16:40:47": "966180",
+    "2026-04-29 16:40:48": "935100",
+    "2026-04-29 16:40:49": "963600",
+    "2026-04-29 16:40:50": "962700",
+    "2026-04-29 16:40:51": "949440",
+    "2026-04-29 16:40:52": "932160",
+    "2026-04-29 16:40:53": "919860",
+    "2026-04-29 16:40:54": "883140",
+    "2026-04-29 16:40:55": "915660",
+    "2026-04-29 16:40:56": "907140",
+    "2026-04-29 16:40:57": "918660",
+    "2026-04-29 16:40:58": "933840",
+    "2026-04-29 16:40:59": "923220",
+    "2026-04-29 16:41:00": "919440",
+    "2026-04-29 16:41:01": "906180",
+    "2026-04-29 16:41:02": "895860",
+    "2026-04-29 16:41:03": "930300",
+    "2026-04-29 16:41:04": "888060",
+    "2026-04-29 16:41:05": "882900",
+    "2026-04-29 16:41:06": "899100",
+    "2026-04-29 16:41:07": "889020",
+    "2026-04-29 16:41:08": "871620",
+    "2026-04-29 16:41:09": "878280",
+    "2026-04-29 16:41:10": "895200",
+    "2026-04-29 16:41:11": "901740",
+    "2026-04-29 16:41:12": "881340",
+    "2026-04-29 16:41:13": "904680",
+    "2026-04-29 16:41:14": "858660",
+    "2026-04-29 16:41:15": "843000",
+    "2026-04-29 16:41:16": "952680",
+    "2026-04-29 16:41:17": "888540",
+    "2026-04-29 16:41:18": "956100",
+    "2026-04-29 16:41:19": "963060",
+    "2026-04-29 16:41:20": "976620",
+    "2026-04-29 16:41:21": "963720",
+    "2026-04-29 16:41:22": "973560",
+    "2026-04-29 16:41:23": "979740",
+    "2026-04-29 16:41:24": "970320",
+    "2026-04-29 16:41:25": "985740",
+    "2026-04-29 16:41:26": "977220",
+    "2026-04-29 16:41:27": "975360",
+    "2026-04-29 16:41:28": "987840",
+    "2026-04-29 16:41:29": "976920",
+    "2026-04-29 16:41:30": "975720",
+    "2026-04-29 16:41:31": "977520",
+    "2026-04-29 16:41:32": "974940",
+    "2026-04-29 16:41:33": "972000",
+    "2026-04-29 16:41:34": "986700",
+    "2026-04-29 16:41:35": "966960",
+    "2026-04-29 16:41:36": "983760",
+    "2026-04-29 16:41:37": "968220",
+    "2026-04-29 16:41:38": "982140",
+    "2026-04-29 16:41:39": "982080",
+    "2026-04-29 16:41:40": "970320",
+    "2026-04-29 16:41:41": "979680",
+    "2026-04-29 16:41:42": "967260",
+    "2026-04-29 16:41:43": "980580",
+    "2026-04-29 16:41:44": "967740",
+    "2026-04-29 16:41:45": "977700",
+    "2026-04-29 16:41:46": "977280",
+    "2026-04-29 16:41:47": "973740",
+    "2026-04-29 16:41:48": "973140",
+    "2026-04-29 16:41:49": "972600",
+    "2026-04-29 16:41:50": "994380",
+    "2026-04-29 16:41:51": "978300",
+    "2026-04-29 16:41:52": "971340",
+    "2026-04-29 16:41:53": "982740",
+    "2026-04-29 16:41:54": "986220",
+    "2026-04-29 16:41:55": "974220",
+    "2026-04-29 16:41:56": "987480",
+    "2026-04-29 16:41:57": "967980",
+    "2026-04-29 16:41:58": "975000",
+    "2026-04-29 16:41:59": "931980",
+    "2026-04-29 16:42:00": "967920",
+    "2026-04-29 16:42:01": "973980",
+    "2026-04-29 16:42:02": "978900",
+    "2026-04-29 16:42:03": "984060",
+    "2026-04-29 16:42:04": "981120",
+    "2026-04-29 16:42:05": "994920",
+    "2026-04-29 16:42:06": "926400",
+    "2026-04-29 16:42:07": "969540",
+    "2026-04-29 16:42:08": "964260",
+    "2026-04-29 16:42:09": "981900",
+    "2026-04-29 16:42:10": "938580",
+    "2026-04-29 16:42:11": "958680",
+    "2026-04-29 16:42:12": "958320",
+    "2026-04-29 16:42:13": "970560",
+    "2026-04-29 16:42:14": "956880",
+    "2026-04-29 16:42:15": "957420",
+    "2026-04-29 16:42:16": "952800",
+    "2026-04-29 16:42:17": "961320",
+    "2026-04-29 16:42:18": "970800",
+    "2026-04-29 16:42:19": "948360",
+    "2026-04-29 16:42:20": "941460",
+    "2026-04-29 16:42:21": "917640",
+    "2026-04-29 16:42:22": "967200",
+    "2026-04-29 16:42:23": "976740",
+    "2026-04-29 16:42:24": "900840",
+    "2026-04-29 16:42:25": "922320",
+    "2026-04-29 16:42:26": "866700",
+    "2026-04-29 16:42:27": "919860",
+    "2026-04-29 16:42:28": "897120",
+    "2026-04-29 16:42:29": "845100",
+    "2026-04-29 16:42:30": "870780",
+    "2026-04-29 16:42:31": "876540",
+    "2026-04-29 16:42:32": "873420",
+    "2026-04-29 16:42:33": "891780",
+    "2026-04-29 16:42:34": "903420",
+    "2026-04-29 16:42:35": "890160",
+    "2026-04-29 16:42:36": "884040",
+    "2026-04-29 16:42:37": "930300",
+    "2026-04-29 16:42:38": "858600",
+    "2026-04-29 16:42:39": "886380",
+    "2026-04-29 16:42:40": "897720",
+    "2026-04-29 16:42:41": "899400",
+    "2026-04-29 16:42:42": "873300",
+    "2026-04-29 16:42:43": "868140",
+    "2026-04-29 16:42:44": "857580",
+    "2026-04-29 16:42:45": "880260",
+    "2026-04-29 16:42:46": "862200",
+    "2026-04-29 16:42:47": "830640",
+    "2026-04-29 16:42:48": "836040",
+    "2026-04-29 16:42:49": "846600",
+    "2026-04-29 16:42:50": "877440",
+    "2026-04-29 16:42:51": "816000",
+    "2026-04-29 16:42:52": "817560",
+    "2026-04-29 16:42:53": "915240",
+    "2026-04-29 16:42:54": "892920",
+    "2026-04-29 16:42:55": "890760",
+    "2026-04-29 16:42:56": "854220",
+    "2026-04-29 16:42:57": "846480",
+    "2026-04-29 16:42:58": "862740",
+    "2026-04-29 16:42:59": "866040",
+    "2026-04-29 16:43:00": "837120",
+    "2026-04-29 16:43:01": "851580",
+    "2026-04-29 16:43:02": "840000",
+    "2026-04-29 16:43:03": "942720",
+    "2026-04-29 16:43:04": "969420",
+    "2026-04-29 16:43:05": "975660",
+    "2026-04-29 16:43:06": "951240",
+    "2026-04-29 16:43:07": "974280",
+    "2026-04-29 16:43:08": "975720",
+    "2026-04-29 16:43:09": "970500",
+    "2026-04-29 16:43:10": "975300",
+    "2026-04-29 16:43:11": "974220",
+    "2026-04-29 16:43:12": "973740",
+    "2026-04-29 16:43:13": "975120",
+    "2026-04-29 16:43:14": "963780",
+    "2026-04-29 16:43:15": "975180",
+    "2026-04-29 16:43:16": "985920",
+    "2026-04-29 16:43:17": "978180",
+    "2026-04-29 16:43:18": "982740",
+    "2026-04-29 16:43:19": "974820",
+    "2026-04-29 16:43:20": "984600",
+    "2026-04-29 16:43:21": "974160",
+    "2026-04-29 16:43:22": "974040",
+    "2026-04-29 16:43:23": "980580",
+    "2026-04-29 16:43:24": "982140",
+    "2026-04-29 16:43:25": "981780",
+    "2026-04-29 16:43:26": "978240",
+    "2026-04-29 16:43:27": "981780",
+    "2026-04-29 16:43:28": "956280",
+    "2026-04-29 16:43:29": "951000",
+    "2026-04-29 16:43:30": "961620",
+    "2026-04-29 16:43:31": "954180",
+    "2026-04-29 16:43:32": "971700",
+    "2026-04-29 16:43:33": "958620",
+    "2026-04-29 16:43:34": "936780",
+    "2026-04-29 16:43:35": "929760",
+    "2026-04-29 16:43:36": "911760",
+    "2026-04-29 16:43:37": "972540",
+    "2026-04-29 16:43:38": "965280",
+    "2026-04-29 16:43:39": "985020",
+    "2026-04-29 16:43:40": "982020",
+    "2026-04-29 16:43:41": "981720",
+    "2026-04-29 16:43:42": "972720",
+    "2026-04-29 16:43:43": "957420",
+    "2026-04-29 16:43:44": "926880",
+    "2026-04-29 16:43:45": "988920",
+    "2026-04-29 16:43:46": "988320",
+    "2026-04-29 16:43:47": "980940",
+    "2026-04-29 16:43:48": "980580",
+    "2026-04-29 16:43:49": "981000",
+    "2026-04-29 16:43:50": "982860",
+    "2026-04-29 16:43:51": "981000",
+    "2026-04-29 16:43:53": "975360",
+    "2026-04-29 16:43:54": "984840",
+    "2026-04-29 16:43:55": "989520",
+    "2026-04-29 16:43:56": "983580",
+    "2026-04-29 16:43:57": "998100",
+    "2026-04-29 16:43:58": "965940",
+    "2026-04-29 16:43:59": "974460",
+    "2026-04-29 16:44:00": "952920",
+    "2026-04-29 16:44:01": "994680",
+    "2026-04-29 16:44:02": "988620",
+    "2026-04-29 16:44:03": "991140",
+    "2026-04-29 16:44:04": "986520",
+    "2026-04-29 16:44:05": "730020",
+    "2026-04-29 16:44:06": "554460",
+    "2026-04-29 16:44:07": "268920",
+    "2026-04-29 16:44:08": "1260"
+  }}
+
+[
+  "69F232FBEA7303E263834303",
+  "2026-04-29 16:34:03",
+  "80 Active Virtual Users configured",
+  "TEST RESULT : System achieved 399170 NOPM from 927789 MySQL TPM"
+]
+
+RESULTS WRITTEN TO /root/benchmarks/results/20260429-162754-mysql9.7-nopgo/bp-110GiB/hammerdb_run.out
