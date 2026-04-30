@@ -1,0 +1,51 @@
+{
+  "timestamp_utc": "2026-04-29T19:38:08Z",
+  "benchmark": {
+    "tool": "HammerDB",
+    "tool_version": "5.0",
+    "workload": "TPC-C",
+    "driver": "timed",
+    "num_virtual_users": 80,
+    "warehouses": 1000,
+    "rampup_minutes": 10,
+    "duration_minutes": 60,
+    "tc_refresh_seconds": 1,
+    "allwarehouse": true,
+    "timeprofile": false,
+    "no_stored_procs": false
+  },
+  "database": {
+    "engine": "mysql",
+    "profile": "9.7-nopgo",
+    "image": "evgeniypatlan/test-images:mysql-9.7.0-tarball",
+    "version": "9.7.0",
+    "storage_engine": "innodb",
+    "partitioned": true,
+    "authentication": "caching_sha2_password",
+    "ssl": false
+  },
+  "innodb": {
+    "buffer_pool_size_gib": 50,
+    "buffer_pool_instances": 2,
+    "buffer_pool_gib_per_instance": 25.00
+  },
+  "paths": {
+    "backup_dir": "/backup/mysql-9.7",
+    "data_dir": "/data/mysql-9.7-nopgo",
+    "mysql_cnf": "/root/benchmarks/results/20260429-165833-mysql9.7-nopgo/bp-50GiB/mysql.cnf",
+    "hammerdb_dir": "/opt/HammerDB-5.0",
+    "hammerdb_load_script": "/root/benchmarks/hammerdb_load.tcl",
+    "hammerdb_run_script": "/root/benchmarks/hammerdb_run.tcl"
+  },
+  "host": {
+    "hostname": "beast-node2.tp.int.percona.com",
+    "kernel": "6.8.0-60-generic",
+    "cpu_count": 80,
+    "ram_gib": 187.54,
+    "cpu_governor": "performance",
+    "cpu_idle_states_enabled": "POLL,C1",
+    "vm_swappiness": 1,
+    "transparent_hugepages_enabled": "never",
+    "transparent_hugepages_defrag": "never"
+  }
+}

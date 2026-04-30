@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-04-25T17:40:19Z",
+  "benchmark": {"tool":"HammerDB","tool_version":"5.0","workload":"TPC-C","driver":"timed",
+                "num_virtual_users":80,"warehouses":1000,
+                "rampup_minutes":2,"duration_minutes":8,
+                "tc_refresh_seconds":1,"no_stored_procs":true,
+                "note":"smoke test — no datadir restore"},
+  "database": {"engine":"seekdb","version":"9.7.0-er2 on seekdb-v1.2.0.0",
+               "container":"seekdb","host":"127.0.0.1","port":2881},
+  "tuning": {"memory_limit_gib":50}
+}

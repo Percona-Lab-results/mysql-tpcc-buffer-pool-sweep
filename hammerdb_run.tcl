@@ -45,6 +45,11 @@ diset tpcc mysql_duration $duration
 diset tpcc mysql_allwarehouse true
 diset tpcc mysql_timeprofile false
 diset tpcc mysql_num_vu $num_vu
+# HDB_NO_STORED_PROCS=true makes the run-time driver embed SQL inline
+# instead of CALL-ing stored procedures. Default false — schemas loaded
+# via hammerdb_load.tcl contain NEWORD/PAYMENT/DELIVERY/OSTAT/SLEV.
+set hdb_no_sp [expr {[info exists ::env(HDB_NO_STORED_PROCS)] ? $::env(HDB_NO_STORED_PROCS) : "false"}]
+diset tpcc mysql_no_stored_procs $hdb_no_sp
 
 tcset refreshrate $tc_rate
 tcset logtotemp 1

@@ -52,8 +52,8 @@ die()  { echo "[$(date '+%H:%M:%S')] ERROR: $*" >&2; exit 1; }
 # Validate every profile token before we spend any real time on the sweep.
 for p in $PROFILES; do
     case "$p" in
-        8.4|9.7|maria-11|maria-12|maria-12.3) ;;
-        *) die "Unknown profile '$p' — expected 8.4|9.7|maria-11|maria-12|maria-12.3" ;;
+        8.4|9.7|9.7-nopgo|maria-11|maria-12|maria-12.3) ;;
+        *) die "Unknown profile '$p' — expected 8.4|9.7|9.7-nopgo|maria-11|maria-12|maria-12.3" ;;
     esac
 done
 

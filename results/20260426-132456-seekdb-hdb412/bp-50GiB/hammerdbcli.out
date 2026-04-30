@@ -1,0 +1,379 @@
+HammerDB CLI v4.12
+Copyright (C) 2003-2024 Steve Shaw
+Type "help" for a list of commands
+Initialized Jobs on-disk database /tmp/hammer.DB using existing tables (245,460,992 bytes)
+SETTING CONFIGURATION (seekdb/4.12 num_vu=80 rampup=2m duration=8m tc_rate=1s)
+Database set to MySQL
+Benchmark set to TPC-C for MySQL
+Value 127.0.0.1 for connection:mysql_host is the same as existing value 127.0.0.1, no change made
+Changed connection:mysql_port from 3306 to 2881 for MySQL
+Changed connection:mysql_socket from /tmp/mysql.sock to null for MySQL
+Value false for connection:mysql_ssl is the same as existing value false, no change made
+Value root for tpcc:mysql_user is the same as existing value root, no change made
+Changed tpcc:mysql_pass from mysql to password for MySQL
+Value tpcc for tpcc:mysql_dbase is the same as existing value tpcc, no change made
+Value timed for tpcc:mysql_driver is the same as existing value timed, no change made
+Value 2 for tpcc:mysql_rampup is the same as existing value 2, no change made
+Changed tpcc:mysql_duration from 5 to 8 for MySQL
+Changed tpcc:mysql_allwarehouse from false to true for MySQL
+Value false for tpcc:mysql_timeprofile is the same as existing value false, no change made
+Changed tpcc:mysql_num_vu from 1 to 80 for MySQL
+Changed tpcc:mysql_no_stored_procs from false to true for MySQL
+Transaction Counter refresh rate set to 1
+Transaction Counter log to temp set to 1
+Transaction Counter unique log name set to 1
+Transaction Counter timestamps set to 1
+Script loaded, Type "print script" to view
+TEST STARTED
+Vuser 1 created MONITOR - WAIT IDLE
+Vuser 2 created - WAIT IDLE
+Vuser 3 created - WAIT IDLE
+Vuser 4 created - WAIT IDLE
+Vuser 5 created - WAIT IDLE
+Vuser 6 created - WAIT IDLE
+Vuser 7 created - WAIT IDLE
+Vuser 8 created - WAIT IDLE
+Vuser 9 created - WAIT IDLE
+Vuser 10 created - WAIT IDLE
+Vuser 11 created - WAIT IDLE
+Vuser 12 created - WAIT IDLE
+Vuser 13 created - WAIT IDLE
+Vuser 14 created - WAIT IDLE
+Vuser 15 created - WAIT IDLE
+Vuser 16 created - WAIT IDLE
+Vuser 17 created - WAIT IDLE
+Vuser 18 created - WAIT IDLE
+Vuser 19 created - WAIT IDLE
+Vuser 20 created - WAIT IDLE
+Vuser 21 created - WAIT IDLE
+Vuser 22 created - WAIT IDLE
+Vuser 23 created - WAIT IDLE
+Vuser 24 created - WAIT IDLE
+Vuser 25 created - WAIT IDLE
+Vuser 26 created - WAIT IDLE
+Vuser 27 created - WAIT IDLE
+Vuser 28 created - WAIT IDLE
+Vuser 29 created - WAIT IDLE
+Vuser 30 created - WAIT IDLE
+Vuser 31 created - WAIT IDLE
+Vuser 32 created - WAIT IDLE
+Vuser 33 created - WAIT IDLE
+Vuser 34 created - WAIT IDLE
+Vuser 35 created - WAIT IDLE
+Vuser 36 created - WAIT IDLE
+Vuser 37 created - WAIT IDLE
+Vuser 38 created - WAIT IDLE
+Vuser 39 created - WAIT IDLE
+Vuser 40 created - WAIT IDLE
+Vuser 41 created - WAIT IDLE
+Vuser 42 created - WAIT IDLE
+Vuser 43 created - WAIT IDLE
+Vuser 44 created - WAIT IDLE
+Vuser 45 created - WAIT IDLE
+Vuser 46 created - WAIT IDLE
+Vuser 47 created - WAIT IDLE
+Vuser 48 created - WAIT IDLE
+Vuser 49 created - WAIT IDLE
+Vuser 50 created - WAIT IDLE
+Vuser 51 created - WAIT IDLE
+Vuser 52 created - WAIT IDLE
+Vuser 53 created - WAIT IDLE
+Vuser 54 created - WAIT IDLE
+Vuser 55 created - WAIT IDLE
+Vuser 56 created - WAIT IDLE
+Vuser 57 created - WAIT IDLE
+Vuser 58 created - WAIT IDLE
+Vuser 59 created - WAIT IDLE
+Vuser 60 created - WAIT IDLE
+Vuser 61 created - WAIT IDLE
+Vuser 62 created - WAIT IDLE
+Vuser 63 created - WAIT IDLE
+Vuser 64 created - WAIT IDLE
+Vuser 65 created - WAIT IDLE
+Vuser 66 created - WAIT IDLE
+Vuser 67 created - WAIT IDLE
+Vuser 68 created - WAIT IDLE
+Vuser 69 created - WAIT IDLE
+Vuser 70 created - WAIT IDLE
+Vuser 71 created - WAIT IDLE
+Vuser 72 created - WAIT IDLE
+Vuser 73 created - WAIT IDLE
+Vuser 74 created - WAIT IDLE
+Vuser 75 created - WAIT IDLE
+Vuser 76 created - WAIT IDLE
+Vuser 77 created - WAIT IDLE
+Vuser 78 created - WAIT IDLE
+Vuser 79 created - WAIT IDLE
+Vuser 80 created - WAIT IDLE
+Vuser 81 created - WAIT IDLE
+81 Virtual Users Created with Monitor VU
+Transaction Counter logging activated to /tmp/hdbtcount_69EE1233650503E233730393.log
+Transaction Counter Started
+Transaction Counter thread running with threadid:tid0x771471ffb6c0
+Vuser 1:RUNNING
+Error in Virtual User 1: mysqluse/db server: Unknown database
+Vuser 1:FINISHED FAILED
+Vuser 2:RUNNING
+Error in Virtual User 2: mysqluse/db server: Unknown database
+Vuser 2:FINISHED FAILED
+Vuser 3:RUNNING
+Error in Virtual User 3: mysqluse/db server: Unknown database
+Vuser 3:FINISHED FAILED
+Vuser 4:RUNNING
+Error in Virtual User 4: mysqluse/db server: Unknown database
+Vuser 4:FINISHED FAILED
+Vuser 5:RUNNING
+Error in Virtual User 5: mysqluse/db server: Unknown database
+Vuser 5:FINISHED FAILED
+Vuser 6:RUNNING
+Error in Virtual User 6: mysqluse/db server: Unknown database
+Vuser 6:FINISHED FAILED
+Vuser 7:RUNNING
+Error in Virtual User 7: mysqluse/db server: Unknown database
+Vuser 7:FINISHED FAILED
+Vuser 8:RUNNING
+Error in Virtual User 8: mysqluse/db server: Unknown database
+Vuser 8:FINISHED FAILED
+Vuser 9:RUNNING
+Error in Virtual User 9: mysqluse/db server: Unknown database
+Vuser 9:FINISHED FAILED
+Vuser 10:RUNNING
+Error in Virtual User 10: mysqluse/db server: Unknown database
+Vuser 10:FINISHED FAILED
+Vuser 11:RUNNING
+Error in Virtual User 11: mysqluse/db server: Unknown database
+Vuser 11:FINISHED FAILED
+Vuser 12:RUNNING
+Error in Virtual User 12: mysqluse/db server: Unknown database
+Vuser 12:FINISHED FAILED
+Vuser 13:RUNNING
+Error in Virtual User 13: mysqluse/db server: Unknown database
+Vuser 13:FINISHED FAILED
+Vuser 14:RUNNING
+Error in Virtual User 14: mysqluse/db server: Unknown database
+Vuser 14:FINISHED FAILED
+Vuser 15:RUNNING
+Error in Virtual User 15: mysqluse/db server: Unknown database
+Vuser 15:FINISHED FAILED
+Vuser 16:RUNNING
+Error in Virtual User 16: mysqluse/db server: Unknown database
+Vuser 16:FINISHED FAILED
+Vuser 17:RUNNING
+Error in Virtual User 17: mysqluse/db server: Unknown database
+Vuser 17:FINISHED FAILED
+Vuser 18:RUNNING
+Error in Virtual User 18: mysqluse/db server: Unknown database
+Vuser 18:FINISHED FAILED
+Vuser 19:RUNNING
+Error in Virtual User 19: mysqluse/db server: Unknown database
+Vuser 19:FINISHED FAILED
+Vuser 20:RUNNING
+Error in Virtual User 20: mysqluse/db server: Unknown database
+Vuser 20:FINISHED FAILED
+Vuser 21:RUNNING
+Error in Virtual User 21: mysqluse/db server: Unknown database
+Vuser 21:FINISHED FAILED
+Vuser 22:RUNNING
+Error in Virtual User 22: mysqluse/db server: Unknown database
+Vuser 22:FINISHED FAILED
+Vuser 23:RUNNING
+Error in Virtual User 23: mysqluse/db server: Unknown database
+Vuser 23:FINISHED FAILED
+Vuser 24:RUNNING
+Error in Virtual User 24: mysqluse/db server: Unknown database
+Vuser 24:FINISHED FAILED
+Vuser 25:RUNNING
+Error in Virtual User 25: mysqluse/db server: Unknown database
+Vuser 25:FINISHED FAILED
+Vuser 26:RUNNING
+Error in Virtual User 26: mysqluse/db server: Unknown database
+Vuser 26:FINISHED FAILED
+Vuser 27:RUNNING
+Error in Virtual User 27: mysqluse/db server: Unknown database
+Vuser 27:FINISHED FAILED
+Vuser 28:RUNNING
+Error in Virtual User 28: mysqluse/db server: Unknown database
+Vuser 28:FINISHED FAILED
+Vuser 29:RUNNING
+Error in Virtual User 29: mysqluse/db server: Unknown database
+Vuser 29:FINISHED FAILED
+Vuser 30:RUNNING
+Error in Virtual User 30: mysqluse/db server: Unknown database
+Vuser 30:FINISHED FAILED
+Vuser 31:RUNNING
+Error in Virtual User 31: mysqluse/db server: Unknown database
+Vuser 31:FINISHED FAILED
+Vuser 32:RUNNING
+Error in Virtual User 32: mysqluse/db server: Unknown database
+Vuser 32:FINISHED FAILED
+Vuser 33:RUNNING
+Error in Virtual User 33: mysqluse/db server: Unknown database
+Vuser 33:FINISHED FAILED
+Vuser 34:RUNNING
+Error in Virtual User 34: mysqluse/db server: Unknown database
+Vuser 34:FINISHED FAILED
+Vuser 35:RUNNING
+Error in Virtual User 35: mysqluse/db server: Unknown database
+Vuser 35:FINISHED FAILED
+Vuser 36:RUNNING
+Error in Virtual User 36: mysqluse/db server: Unknown database
+Vuser 36:FINISHED FAILED
+Vuser 37:RUNNING
+Error in Virtual User 37: mysqluse/db server: Unknown database
+Vuser 37:FINISHED FAILED
+Vuser 38:RUNNING
+Error in Virtual User 38: mysqluse/db server: Unknown database
+Vuser 38:FINISHED FAILED
+Vuser 39:RUNNING
+Error in Virtual User 39: mysqluse/db server: Unknown database
+Vuser 39:FINISHED FAILED
+Vuser 40:RUNNING
+Error in Virtual User 40: mysqluse/db server: Unknown database
+Vuser 40:FINISHED FAILED
+Vuser 41:RUNNING
+Error in Virtual User 41: mysqluse/db server: Unknown database
+Vuser 41:FINISHED FAILED
+Vuser 42:RUNNING
+Error in Virtual User 42: mysqluse/db server: Unknown database
+Vuser 42:FINISHED FAILED
+Vuser 43:RUNNING
+Error in Virtual User 43: mysqluse/db server: Unknown database
+Vuser 43:FINISHED FAILED
+Vuser 44:RUNNING
+Error in Virtual User 44: mysqluse/db server: Unknown database
+Vuser 44:FINISHED FAILED
+Vuser 45:RUNNING
+Error in Virtual User 45: mysqluse/db server: Unknown database
+Vuser 45:FINISHED FAILED
+Vuser 46:RUNNING
+Error in Virtual User 46: mysqluse/db server: Unknown database
+Vuser 46:FINISHED FAILED
+Vuser 47:RUNNING
+Error in Virtual User 47: mysqluse/db server: Unknown database
+Vuser 47:FINISHED FAILED
+Vuser 48:RUNNING
+Error in Virtual User 48: mysqluse/db server: Unknown database
+Vuser 48:FINISHED FAILED
+Vuser 49:RUNNING
+Error in Virtual User 49: mysqluse/db server: Unknown database
+Vuser 49:FINISHED FAILED
+Vuser 50:RUNNING
+Error in Virtual User 50: mysqluse/db server: Unknown database
+Vuser 50:FINISHED FAILED
+Vuser 51:RUNNING
+Error in Virtual User 51: mysqluse/db server: Unknown database
+Vuser 51:FINISHED FAILED
+Vuser 52:RUNNING
+Error in Virtual User 52: mysqluse/db server: Unknown database
+Vuser 52:FINISHED FAILED
+Vuser 53:RUNNING
+Error in Virtual User 53: mysqluse/db server: Unknown database
+Vuser 53:FINISHED FAILED
+Vuser 54:RUNNING
+Error in Virtual User 54: mysqluse/db server: Unknown database
+Vuser 54:FINISHED FAILED
+Vuser 55:RUNNING
+Error in Virtual User 55: mysqluse/db server: Unknown database
+Vuser 55:FINISHED FAILED
+Vuser 56:RUNNING
+Error in Virtual User 56: mysqluse/db server: Unknown database
+Vuser 56:FINISHED FAILED
+Vuser 57:RUNNING
+Error in Virtual User 57: mysqluse/db server: Unknown database
+Vuser 57:FINISHED FAILED
+Vuser 58:RUNNING
+Error in Virtual User 58: mysqluse/db server: Unknown database
+Vuser 58:FINISHED FAILED
+Vuser 59:RUNNING
+Error in Virtual User 59: mysqluse/db server: Unknown database
+Vuser 59:FINISHED FAILED
+Vuser 60:RUNNING
+Error in Virtual User 60: mysqluse/db server: Unknown database
+Vuser 60:FINISHED FAILED
+Vuser 61:RUNNING
+Error in Virtual User 61: mysqluse/db server: Unknown database
+Vuser 61:FINISHED FAILED
+Vuser 62:RUNNING
+Error in Virtual User 62: mysqluse/db server: Unknown database
+Vuser 62:FINISHED FAILED
+Vuser 63:RUNNING
+Error in Virtual User 63: mysqluse/db server: Unknown database
+Vuser 63:FINISHED FAILED
+Vuser 64:RUNNING
+Error in Virtual User 64: mysqluse/db server: Unknown database
+Vuser 64:FINISHED FAILED
+Vuser 65:RUNNING
+Error in Virtual User 65: mysqluse/db server: Unknown database
+Vuser 65:FINISHED FAILED
+Vuser 66:RUNNING
+Error in Virtual User 66: mysqluse/db server: Unknown database
+Vuser 66:FINISHED FAILED
+Vuser 67:RUNNING
+Error in Virtual User 67: mysqluse/db server: Unknown database
+Vuser 67:FINISHED FAILED
+Vuser 68:RUNNING
+Error in Virtual User 68: mysqluse/db server: Unknown database
+Vuser 68:FINISHED FAILED
+Vuser 69:RUNNING
+Error in Virtual User 69: mysqluse/db server: Unknown database
+Vuser 69:FINISHED FAILED
+Vuser 70:RUNNING
+Error in Virtual User 70: mysqluse/db server: Unknown database
+Vuser 70:FINISHED FAILED
+Vuser 71:RUNNING
+Error in Virtual User 71: mysqluse/db server: Unknown database
+Vuser 71:FINISHED FAILED
+Vuser 72:RUNNING
+Error in Virtual User 72: mysqluse/db server: Unknown database
+Vuser 72:FINISHED FAILED
+Vuser 73:RUNNING
+Error in Virtual User 73: mysqluse/db server: Unknown database
+Vuser 73:FINISHED FAILED
+Vuser 74:RUNNING
+Error in Virtual User 74: mysqluse/db server: Unknown database
+Vuser 74:FINISHED FAILED
+Vuser 75:RUNNING
+Error in Virtual User 75: mysqluse/db server: Unknown database
+Vuser 75:FINISHED FAILED
+Vuser 76:RUNNING
+Error in Virtual User 76: mysqluse/db server: Unknown database
+Vuser 76:FINISHED FAILED
+Vuser 77:RUNNING
+Error in Virtual User 77: mysqluse/db server: Unknown database
+Vuser 77:FINISHED FAILED
+Vuser 78:RUNNING
+Error in Virtual User 78: mysqluse/db server: Unknown database
+Vuser 78:FINISHED FAILED
+Vuser 79:RUNNING
+Error in Virtual User 79: mysqluse/db server: Unknown database
+Vuser 79:FINISHED FAILED
+Vuser 80:RUNNING
+Error in Virtual User 80: mysqluse/db server: Unknown database
+Vuser 80:FINISHED FAILED
+Vuser 81:RUNNING
+Error in Virtual User 81: mysqluse/db server: Unknown database
+Vuser 81:FINISHED FAILED
+ALL VIRTUAL USERS COMPLETE
+vudestroy success
+Transaction Counter thread running with threadid:tid0x771471ffb6c0
+Stopping Transaction Counter
+Closed Transaction Counter Log
+TEST COMPLETE jobid=69EE1233650503E283037333
+{"69EE1233650503E283037333": {
+    "Jobid": "has",
+    "no": "timing",
+    "data": ""
+  }}
+
+{"69EE1233650503E283037333": {
+    "Jobid": "has",
+    "no": "transaction",
+    "counter": "data"
+  }}
+
+[
+  "69EE1233650503E283037333",
+  "Jobid has no test result"
+]
+
+RESULTS WRITTEN TO /root/benchmarks/results/20260426-132456-seekdb-hdb412/bp-50GiB/hammerdb_run.out

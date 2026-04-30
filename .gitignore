@@ -12,6 +12,12 @@ results/**/hammerdb.log
 # Big RPM blobs for the locally-built 9.7 image — rebuild via download
 mysql-9.7-image/rpms/*.rpm
 mysql-9.7-image/entrypoint/gosu
+# Stray RPM downloads at the repo root
+/*.rpm
+
+# Locally-built no-PGO MySQL image tarball (~550 MB) — redownload if needed
+mysql-9.7-nopgo-image/*.tar.gz
+mysql-9.7-nopgo-image/entrypoint/gosu
 
 # SSL/TLS material copied from running containers
 mysql-certs/

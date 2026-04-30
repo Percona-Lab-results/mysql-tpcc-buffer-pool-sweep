@@ -35,6 +35,9 @@ diset tpcc maria_duration $duration
 diset tpcc maria_allwarehouse true
 diset tpcc maria_timeprofile false
 diset tpcc maria_num_vu $num_vu
+# HDB_NO_STORED_PROCS=true inlines SQL instead of CALLing procs.
+set hdb_no_sp [expr {[info exists ::env(HDB_NO_STORED_PROCS)] ? $::env(HDB_NO_STORED_PROCS) : "false"}]
+diset tpcc maria_no_stored_procs $hdb_no_sp
 
 tcset refreshrate $tc_rate
 tcset logtotemp 1
